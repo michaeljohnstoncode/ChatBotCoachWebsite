@@ -29,9 +29,7 @@ C:\Users\Michael\source\repos\ChatBotCoachWebsite\obj\Debug\net7.0\refint\ChatBo
 C:\Users\Michael\source\repos\ChatBotCoachWebsite\obj\Debug\net7.0\ChatBotCoachWebsite.pdb
 C:\Users\Michael\source\repos\ChatBotCoachWebsite\obj\Debug\net7.0\ChatBotCoachWebsite.genruntimeconfig.cache
 C:\Users\Michael\source\repos\ChatBotCoachWebsite\obj\Debug\net7.0\ref\ChatBotCoachWebsite.dll
-C:\Users\Michael\source\repos\ChatBotCoachWebsite\bin\Debug\net7.0\Microsoft.AspNetCore.Connections.Abstractions.dll
-C:\Users\Michael\source\repos\ChatBotCoachWebsite\bin\Debug\net7.0\Microsoft.AspNetCore.SignalR.Common.dll
-C:\Users\Michael\source\repos\ChatBotCoachWebsite\bin\Debug\net7.0\Microsoft.Extensions.Features.dll
-C:\Users\Michael\source\repos\ChatBotCoachWebsite\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
 C:\Users\Michael\source\repos\ChatBotCoachWebsite\obj\Debug\net7.0\ChatBotCoachWebsite.csproj.CopyComplete
 C:\Users\Michael\source\repos\ChatBotCoachWebsite\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.Certificate.dll
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\bin\Debug\net7.0\System.Net.WebSockets.WebSocketProtocol.dll
