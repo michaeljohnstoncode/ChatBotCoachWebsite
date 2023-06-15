@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Certificate" Version="7.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+    <PackageReference Include="Pinecone.NET" Version="1.2.0" />
   </ItemGroup>
 
 </Project>
