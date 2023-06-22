@@ -1,4 +1,5 @@
-﻿using ChatBotCoachWebsite.Models;
+﻿using ChatBotCoachWebsite.Helpers;
+using ChatBotCoachWebsite.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,10 +8,12 @@ namespace ChatBotCoachWebsite.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly BuildPineconeIndex _buildKnowledgeBase;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, BuildPineconeIndex buildKnowledgeBase)
         {
             _logger = logger;
+            _buildKnowledgeBase = buildKnowledgeBase;
         }
 
         public IActionResult Index()
@@ -23,8 +26,9 @@ namespace ChatBotCoachWebsite.Controllers
             return View();
         }
 
-        public IActionResult Chat()
+        public async Task<IActionResult> ChatAsync()
         {
+           // await _buildKnowledgeBase.CreateVectorsAsync();
             return View();
         }
 

@@ -1,0 +1,39 @@
+﻿namespace ChatBotCoachWebsite.Helpers
+{
+    public interface IKeyProvider
+    {
+        string GetKey(string keyName);
+    }
+
+    public class TextFileKeyProvider : IKeyProvider
+    {
+        private const string _apiKeysDir = @"C:\\Users\\Michael\\Desktop\\apikeys";
+
+        public string GetKey(string keyName)
+        {
+            var filePath = Path.Combine(_apiKeysDir, $"{keyName}.txt");
+            if (File.Exists(filePath))
+            {
+                return File.ReadAllText(filePath).Trim();
+            }
+
+            throw new ArgumentException($"Key {keyName} not found.");
+        }
+    }
+
+    public class KeyService
+    {
+        private readonly IKeyProvider keyProvider;
+
+        public KeyService(IKeyProvider keyProvider)
+        {
+            this.keyProvider = keyProvider;
+        }
+
+        public string GetApiKey(string keyName)
+        {
+            return keyProvider.GetKey(keyName);
+        }
+    }
+
+}
