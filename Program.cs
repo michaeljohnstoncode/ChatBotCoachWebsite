@@ -7,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddSignalR();
 builder.Services.AddScoped<BuildPineconeIndex>();
+builder.Services.AddScoped<ICustomDataProvider, TextFileCustomDataProvider>();
+builder.Services.AddScoped<IKeyProvider, TextFileKeyProvider>();
 
 var app = builder.Build();
 

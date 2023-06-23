@@ -20,7 +20,8 @@
             throw new ArgumentException($"Key {keyName} not found.");
         }
     }
-
+/*
+    //KeyService class currently not necessary because only will need the TextFileKeyProvider class. I will keep this because I am still learning to integrate SOLID principles
     public class KeyService
     {
         private readonly IKeyProvider keyProvider;
@@ -35,5 +36,5 @@
             return keyProvider.GetKey(keyName);
         }
     }
-
+*/
 }

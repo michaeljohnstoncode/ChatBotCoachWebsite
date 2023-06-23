@@ -28,7 +28,7 @@ namespace ChatBotCoachWebsite.Controllers
 
         public async Task<IActionResult> ChatAsync()
         {
-           // await _buildKnowledgeBase.CreateVectorsAsync();
+            await _buildKnowledgeBase.UpsertPineconeIndexAsync();
             return View();
         }
 

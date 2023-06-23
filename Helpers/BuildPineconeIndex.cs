@@ -1,5 +1,6 @@
 ﻿using OpenAI_API;
 using OpenAI_API.Embedding;
+using OpenAI_API.Images;
 using OpenAI_API.Models;
 using Pinecone;
 using Pinecone.Grpc;
@@ -7,12 +8,19 @@ using static ChatBotCoachWebsite.Helpers.IKeyProvider;
 
 namespace ChatBotCoachWebsite.Helpers
 {
+    public class VectorDataModel
+    {
+        public string FileName { get; set; }
+        public string FileData { get; set; }
+        public EmbeddingResult EmbeddingResult { get; set; }
+    }
+
     public class BuildPineconeIndex
     {
         private ICustomDataProvider _customDataProvider;
-        private KeyService _keyService;
+        private IKeyProvider _keyService;
 
-        public BuildPineconeIndex(ICustomDataProvider customDataProvider, KeyService keyService)
+        public BuildPineconeIndex(ICustomDataProvider customDataProvider, IKeyProvider keyService)
         {
             _customDataProvider = customDataProvider;
             _keyService = keyService;
@@ -36,13 +44,36 @@ namespace ChatBotCoachWebsite.Helpers
             //await pinecone.ConfigureIndex(indexName, replicas: 1, podType: "p1");
 
             //upsert vectors into index
-            await index.Upsert(vectors);
+            //await index.Upsert(vectors);
+
+            var filter = new MetadataMap
+            {
+                ["text"] = new MetadataMap
+                {
+                    ["$in"] = new MetadataValue[] { "farah" }
+                }
+            };
+
+            //get openAI api key
+            var openAiApiKey = _keyService.GetKey("openaikey");
+            //initialize openAi
+            OpenAIAPI openAi = new OpenAIAPI(openAiApiKey);
+            var embeddingQuery = await openAi.Embeddings.CreateEmbeddingAsync(new EmbeddingRequest(Model.AdaTextEmbedding, "farah"));
+            var qery = await index.Query(embeddingQuery, topK: 5, includeMetadata: true);
+            foreach(var vector in qery)
+            {
+                var test = vector.Metadata;
+            }
+            //var fetch = await index.Fetch(new[] { "mercy.txt" });
+           // var query = await index.Query("mercy.txt", topK: 5, filter);
+            
+           // var qtest = query.GetValue(0);
         }
 
         private PineconeClient InitializePineCone()
         {
             //get pinecone API key
-            var pineconeApiKey = _keyService.GetApiKey("pineconekey");
+            var pineconeApiKey = _keyService.GetKey("pineconekey");
 
             var pineconeEnvironment = "asia-southeast1-gcp-free";
             var pinecone = new PineconeClient(pineconeApiKey, pineconeEnvironment);
@@ -50,10 +81,10 @@ namespace ChatBotCoachWebsite.Helpers
             return pinecone;
         }
 
-		private async Task<Dictionary<string, EmbeddingResult>> CreateOpenAiEmbeddingsAsync()
+		private async Task<List<VectorDataModel>> CreateOpenAiEmbeddingsAsync()
 		{
             //get openAI api key
-            var openAiApiKey = _keyService.GetApiKey("openaikey");
+            var openAiApiKey = _keyService.GetKey("openaikey");
 
             //get custom data
             var customData = _customDataProvider.ReadCustomData();
@@ -62,11 +93,18 @@ namespace ChatBotCoachWebsite.Helpers
             OpenAIAPI openAi = new OpenAIAPI(openAiApiKey);
 
             //create dictionary of embedding results by embedding custom data using openAi
-            Dictionary<string, EmbeddingResult> embeddingResults = new();
+            List<VectorDataModel> embeddingResults = new();
 			foreach(var data in customData)
 			{
 				var result = await openAi.Embeddings.CreateEmbeddingAsync(new EmbeddingRequest(Model.AdaTextEmbedding, data.Value));
-				embeddingResults.Add(data.Key, result);
+
+                VectorDataModel vectorData = new()
+                {
+                    FileName = data.Key,
+                    FileData = data.Value,
+                    EmbeddingResult = result,
+                };
+				embeddingResults.Add(vectorData);
 			}
 
 			return embeddingResults;
@@ -74,7 +112,7 @@ namespace ChatBotCoachWebsite.Helpers
 
         private async Task<Vector[]> CreateVectorsAsync()
         {
-            Task<Dictionary<string, EmbeddingResult>> embeddings = CreateOpenAiEmbeddingsAsync();
+            Task<List<VectorDataModel>> embeddings = CreateOpenAiEmbeddingsAsync();
 
             //create vectors to be upserted later into pinecone database
             List<Vector> vectorList = new();
@@ -82,12 +120,13 @@ namespace ChatBotCoachWebsite.Helpers
             {
                 Vector vector = new Vector
                 {
-                    Id = embedding.Key,
+                    Id = embedding.FileName,
                     Metadata = new MetadataMap
                     {
-                        ["name"] = embedding.Key
+                        ["name"] = embedding.FileName,
+                        ["text"] = embedding.FileData,
                     },
-                    Values = embedding.Value,
+                    Values = embedding.EmbeddingResult,
 					
                 };
 
