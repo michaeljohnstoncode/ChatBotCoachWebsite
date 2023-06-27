@@ -1,5 +1,6 @@
 
 using ChatBotCoachWebsite.Helpers;
+using ChatBotCoachWebsite.Helpers.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.Services.AddScoped<BuildPineconeIndex>();
 builder.Services.AddScoped<QueryPineconeIndex>();
 builder.Services.AddScoped<ICustomDataProvider, TextFileCustomDataProvider>();
 builder.Services.AddScoped<IKeyProvider, TextFileKeyProvider>();
+builder.Services.AddScoped<IOpenAIService, OpenAIService>();
 
 var app = builder.Build();
 

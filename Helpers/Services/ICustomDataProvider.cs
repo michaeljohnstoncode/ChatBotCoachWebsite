@@ -1,4 +1,4 @@
-﻿namespace ChatBotCoachWebsite.Helpers
+﻿namespace ChatBotCoachWebsite.Helpers.Services
 {
     public interface ICustomDataProvider
     {

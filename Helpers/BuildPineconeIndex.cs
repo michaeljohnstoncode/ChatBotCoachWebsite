@@ -1,11 +1,10 @@
-﻿using OpenAI_API;
+﻿using ChatBotCoachWebsite.Helpers.Services;
+using OpenAI_API;
 using OpenAI_API.Embedding;
-using OpenAI_API.Images;
 using OpenAI_API.Models;
 using Pinecone;
 using Pinecone.Grpc;
-using System;
-using static ChatBotCoachWebsite.Helpers.IKeyProvider;
+
 
 namespace ChatBotCoachWebsite.Helpers
 {
@@ -21,16 +20,14 @@ namespace ChatBotCoachWebsite.Helpers
 
         private ICustomDataProvider _customDataProvider;
         private IKeyProvider _keyProvider;
+        private IOpenAIService _openAiService;
 
-        public BuildPineconeIndex(ICustomDataProvider customDataProvider, IKeyProvider keyProvider)
+        public BuildPineconeIndex(ICustomDataProvider customDataProvider, IKeyProvider keyProvider, IOpenAIService openAIService)
         {
             _customDataProvider = customDataProvider;
             _keyProvider = keyProvider;
+            _openAiService = openAIService;
         }
-
-        //TODO: after building the pinecone index, next it needs to be queried for relevant context. relevant context may come from the user's question text. 
-        //      once relevant context is retrieved from index, then openai prompt may be created.
-        //      prompt("something something coach") + indexContext + user's question ---> insert to openai completion --->  returndeliver ai response
 
         public async Task UpsertPineconeIndexAsync()
         {
@@ -100,10 +97,7 @@ namespace ChatBotCoachWebsite.Helpers
 
         private async Task<List<VectorDataModel>> CreateOpenAiEmbeddingsAsync()
         {
-            //get openAI api key
-            var openAiApiKey = _keyProvider.GetKey("openaikey");
-            //initialize openAi
-            OpenAIAPI openAi = new OpenAIAPI(openAiApiKey);
+            OpenAIAPI openAi = _openAiService.GetOpenAI();
 
             //get custom data
             var customData = _customDataProvider.ReadCustomData();

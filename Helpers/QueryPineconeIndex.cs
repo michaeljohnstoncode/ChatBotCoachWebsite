@@ -3,18 +3,21 @@ using OpenAI_API.Models;
 using OpenAI_API;
 using Pinecone.Grpc;
 using Pinecone;
+using ChatBotCoachWebsite.Helpers.Services;
 
 namespace ChatBotCoachWebsite.Helpers
 {
     public class QueryPineconeIndex
     {
-        private IKeyProvider _keyProvider;
+        private IKeyProvider _keyProvider; 
+        private IOpenAIService _openAiService;
         private BuildPineconeIndex _buildPineconeIndex;
 
-        public QueryPineconeIndex(IKeyProvider keyProvider, BuildPineconeIndex buildPineconeIndex)
+        public QueryPineconeIndex(IKeyProvider keyProvider, BuildPineconeIndex buildPineconeIndex, IOpenAIService openAIService)
         {
             _keyProvider = keyProvider;
             _buildPineconeIndex = buildPineconeIndex;
+            _openAiService = openAIService;
         }
 
         public async Task CreateFullAiPromptAsync(string userQuestion, uint topIndexResults)
@@ -25,11 +28,7 @@ namespace ChatBotCoachWebsite.Helpers
             string prompt = AiCustomPrompt();
             string fullCompletionPrompt = prompt + context + userQuestion;
 
-            //get openAI api key
-            var openAiApiKey = _keyProvider.GetKey("openaikey");
-            //initialize openAi
-            OpenAIAPI openAi = new OpenAIAPI(openAiApiKey);
-
+            OpenAIAPI openAi = _openAiService.GetOpenAI();
 
             //TODO: Doing chat completion requires a list of chat history. 
             //      Add method for creating new list of chat messages
@@ -76,8 +75,6 @@ namespace ChatBotCoachWebsite.Helpers
                         contexts.Add(text.ToString());
                     }
                 }
-                //TODO: Get the relevant context from metaData to be used to create the full ai prompt
-
             }
 
             return contexts;
@@ -88,10 +85,8 @@ namespace ChatBotCoachWebsite.Helpers
             //TODO: Supply an instance of OpenAI to multiple methods
             //An instance of openai is already created in BuildPineconeIndex.CreateOpenAiEmbeddingsAsync(), so there should only be one created as it doesn't need to be disposed of for different uses
 
-            //get openAI api key
-            var openAiApiKey = _keyProvider.GetKey("openaikey");
-            //initialize openAi
-            OpenAIAPI openAi = new OpenAIAPI(openAiApiKey);
+            //get openAi instance
+            OpenAIAPI openAi = _openAiService.GetOpenAI();
 
             //get pinecone index
             Index<GrpcTransport> index = await _buildPineconeIndex.GetPineconeIndexAsync();
