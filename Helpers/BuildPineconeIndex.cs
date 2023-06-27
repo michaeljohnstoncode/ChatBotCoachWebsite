@@ -1,4 +1,5 @@
 ﻿using ChatBotCoachWebsite.Helpers.Services;
+using ChatBotCoachWebsite.Models;
 using OpenAI_API;
 using OpenAI_API.Embedding;
 using OpenAI_API.Models;
@@ -8,13 +9,6 @@ using Pinecone.Grpc;
 
 namespace ChatBotCoachWebsite.Helpers
 {
-    public class VectorDataModel
-    {
-        public string FileName { get; set; }
-        public string FileData { get; set; }
-        public EmbeddingResult EmbeddingResult { get; set; }
-    }
-
     public class BuildPineconeIndex
     {
 

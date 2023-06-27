@@ -1,4 +1,6 @@
-﻿namespace ChatBotCoachWebsite.Helpers.Services
+﻿using ChatBotCoachWebsite.Models;
+
+namespace ChatBotCoachWebsite.Helpers.Services
 {
     public interface IChatService
     {
@@ -11,7 +13,12 @@
 
         public async Task SaveMessage(string user, string message)
         {
-            // Code to save message goes here
+          /*  UserMessageModel userMessage = new()
+            {
+                User = user,
+                Message = message
+            };
+          */
         }
     }
 

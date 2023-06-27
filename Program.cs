@@ -12,6 +12,7 @@ builder.Services.AddScoped<QueryPineconeIndex>();
 builder.Services.AddScoped<ICustomDataProvider, TextFileCustomDataProvider>();
 builder.Services.AddScoped<IKeyProvider, TextFileKeyProvider>();
 builder.Services.AddScoped<IOpenAIService, OpenAIService>();
+builder.Services.AddScoped<IChatService, ChatService>();
 
 var app = builder.Build();
 
