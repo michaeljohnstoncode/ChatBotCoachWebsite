@@ -4,6 +4,7 @@ using OpenAI_API;
 using Pinecone.Grpc;
 using Pinecone;
 using ChatBotCoachWebsite.Helpers.Services;
+using ChatBotCoachWebsite.Models;
 
 namespace ChatBotCoachWebsite.Helpers
 {
@@ -20,7 +21,31 @@ namespace ChatBotCoachWebsite.Helpers
             _openAiService = openAIService;
         }
 
-        public async Task CreateFullAiPromptAsync(string userQuestion, uint topIndexResults)
+        public async Task<UserMessageModel> AiCompletionResponse(string userQuestion, uint topIndexResults)
+        {
+            OpenAIAPI openAi = _openAiService.GetOpenAI();
+
+            List<OpenAI_API.Chat.ChatMessage> userChatMsg = await CreateFullAiPromptAsync(userQuestion, topIndexResults);
+
+            OpenAI_API.Chat.ChatResult result = await openAi.Chat.CreateChatCompletionAsync(userChatMsg, model: Model.ChatGPTTurbo);
+
+            string user = "placeholder";
+            string message = "msg placeholder";
+            foreach(var c in result.Choices)
+            {
+                user = c.Message.Role;
+                message = c.Message.Content;
+            }
+
+            UserMessageModel userMessage = new()
+            {
+                User = user,
+                Message = message
+            };
+            return userMessage;
+        }
+
+        private async Task<List<OpenAI_API.Chat.ChatMessage>> CreateFullAiPromptAsync(string userQuestion, uint topIndexResults)
         {
             List<string> contexts = await GetRelevantContextAsync(userQuestion, topIndexResults);
             string context = contexts.First();
@@ -41,11 +66,9 @@ namespace ChatBotCoachWebsite.Helpers
                 Role = OpenAI_API.Chat.ChatMessageRole.User,
                 Content = fullCompletionPrompt
             };
-
             tempChatList.Add(chat);
 
-            var result = await openAi.Chat.CreateChatCompletionAsync(tempChatList, model: Model.ChatGPTTurbo);
-
+            return tempChatList;
         }
 
         private string AiCustomPrompt() => "Pretend that you are a coach helping teach people about competitive video games, specifically first person shooters. " +
