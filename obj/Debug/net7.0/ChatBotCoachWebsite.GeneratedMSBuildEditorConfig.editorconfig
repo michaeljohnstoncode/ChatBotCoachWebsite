@@ -16,8 +16,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Michael\source\repos\ChatBotCoachWebsite
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Michael/source/repos/ChatBotCoachWebsite/Views/Home/Chat.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGF0LmNzaHRtbA==
+[C:/Users/Michael/source/repos/ChatBotCoachWebsite/Views/Chat/Chat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdFxDaGF0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Michael/source/repos/ChatBotCoachWebsite/Views/Chat/Test.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdFxUZXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Michael/source/repos/ChatBotCoachWebsite/Views/Home/Index.cshtml]

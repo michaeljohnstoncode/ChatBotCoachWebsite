@@ -2,7 +2,14 @@
 @{
     ViewData["Title"] = "Chat";
 }
+@{
+    List<string> messagesList = new();
 
+    void OnSend()
+    {
+        Console.WriteLine($"show {messagesList}");
+    }
+}
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,3 +28,4 @@
     <script src="~/js/chat.js"></script>
 </body>
 </html>
+
