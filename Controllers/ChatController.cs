@@ -29,8 +29,8 @@ namespace ChatBotCoachWebsite.Controllers
             //TODO: omit this when providing the user question as input somewhere else (probably in the controller)
             //for now, user question is hardcoded to be used as an example question
             string userQuestion = "\nQuestion: What can I learn about target priority?";
-            uint topIndexResults = 2;
-          // UserMessageModel userMsg = await _queryPineconeIndex.AiCompletionResponse(userQuestion, topIndexResults);
+            
+          // UserMessageModel userMsg = await _queryPineconeIndex.AiCompletionResponse(userQuestion);
            // await _hubContext.Clients.All.SendAsync("ReceiveMessage", userMsg.User, userMsg.Message);
             return View();
 

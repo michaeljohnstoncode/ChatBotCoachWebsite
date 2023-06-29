@@ -13,6 +13,7 @@ namespace ChatBotCoachWebsite.Helpers
         private IKeyProvider _keyProvider; 
         private IOpenAIService _openAiService;
         private BuildPineconeIndex _buildPineconeIndex;
+        private uint _topIndexResults = 2; // number of returned vector texts from querying pinecone index for related context
 
         public QueryPineconeIndex(IKeyProvider keyProvider, BuildPineconeIndex buildPineconeIndex, IOpenAIService openAIService)
         {
@@ -21,37 +22,37 @@ namespace ChatBotCoachWebsite.Helpers
             _openAiService = openAIService;
         }
 
-        public async Task<UserMessageModel> AiCompletionResponse(string userQuestion, uint topIndexResults)
+        public async Task<UserMessageModel> AiCompletionResponse(string user, string userMsg)
         {
             OpenAIAPI openAi = _openAiService.GetOpenAI();
 
-            List<OpenAI_API.Chat.ChatMessage> userChatMsg = await CreateFullAiPromptAsync(userQuestion, topIndexResults);
+            List<OpenAI_API.Chat.ChatMessage> msgContextPrompt = await CreateFullAiPromptAsync(user, userMsg, _topIndexResults);
 
-            OpenAI_API.Chat.ChatResult result = await openAi.Chat.CreateChatCompletionAsync(userChatMsg, model: Model.ChatGPTTurbo);
+            OpenAI_API.Chat.ChatResult result = await openAi.Chat.CreateChatCompletionAsync(msgContextPrompt, model: Model.ChatGPTTurbo);
 
-            string user = "placeholder";
-            string message = "msg placeholder";
+            string aiName = String.Empty;
+            string aiMsg = String.Empty;
             foreach(var c in result.Choices)
             {
-                user = c.Message.Role;
-                message = c.Message.Content;
+                aiName = c.Message.Role;
+                aiMsg = c.Message.Content;
             }
 
-            UserMessageModel userMessage = new()
+            UserMessageModel aiResponse = new()
             {
-                User = user,
-                Message = message
+                User = aiName,
+                Message = aiMsg
             };
-            return userMessage;
+            return aiResponse;
         }
 
-        private async Task<List<OpenAI_API.Chat.ChatMessage>> CreateFullAiPromptAsync(string userQuestion, uint topIndexResults)
+        private async Task<List<OpenAI_API.Chat.ChatMessage>> CreateFullAiPromptAsync(string user, string userMsg, uint topIndexResults)
         {
-            List<string> contexts = await GetRelevantContextAsync(userQuestion, topIndexResults);
+            List<string> contexts = await GetRelevantContextAsync(userMsg, topIndexResults);
             string context = contexts.First();
 
             string prompt = AiCustomPrompt();
-            string fullCompletionPrompt = prompt + context + userQuestion;
+            string fullCompletionPrompt = prompt + context + userMsg;
 
             OpenAIAPI openAi = _openAiService.GetOpenAI();
 
