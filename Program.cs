@@ -13,6 +13,7 @@ builder.Services.AddScoped<ICustomDataProvider, TextFileCustomDataProvider>();
 builder.Services.AddScoped<IKeyProvider, TextFileKeyProvider>();
 builder.Services.AddScoped<IOpenAIService, OpenAIService>();
 builder.Services.AddScoped<IAiChatService, AiChatService>();
+builder.Services.AddScoped<ISummarizeChatService, SummarizeMessageService>();
 
 var app = builder.Build();
 
