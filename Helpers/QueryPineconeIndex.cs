@@ -22,31 +22,34 @@ namespace ChatBotCoachWebsite.Helpers
             _openAiService = openAIService;
         }
 
-        public async Task<UserMessageModel> AiCompletionResponse(string user, string userMsg)
+        public async Task<MessageModel> AiCompletionResponse(List<OpenAI_API.Chat.ChatMessage> chatConversation)
         {
             OpenAIAPI openAi = _openAiService.GetOpenAI();
 
-            List<OpenAI_API.Chat.ChatMessage> msgContextPrompt = await CreateFullAiPromptAsync(user, userMsg, _topIndexResults);
+            //get user and userMsg from conversation. the last name/content should be the latest message, which is the user's message
+            string user = chatConversation.Last().Name;
+            string userMsg = chatConversation.Last().Content;
 
-            OpenAI_API.Chat.ChatResult result = await openAi.Chat.CreateChatCompletionAsync(msgContextPrompt, model: Model.ChatGPTTurbo);
+            //get full prompt+context+userMsg for chat completion
+            OpenAI_API.Chat.ChatMessage fullAiPrompt = await CreateFullAiPromptAsync(user, userMsg, _topIndexResults);
 
-            string aiName = String.Empty;
-            string aiMsg = String.Empty;
-            foreach(var c in result.Choices)
+            chatConversation.Add(fullAiPrompt);
+
+            //get result of chat completion 
+            OpenAI_API.Chat.ChatResult result = await openAi.Chat.CreateChatCompletionAsync(chatConversation, model: Model.ChatGPTTurbo);
+
+            //remove full prompt from the chat conversation, it was added in to help give conversation context for the chat completion. but it is not an actual response of the conversation
+            chatConversation.Remove(fullAiPrompt);
+
+            MessageModel aiResponse = new()
             {
-                aiName = c.Message.Role;
-                aiMsg = c.Message.Content;
-            }
-
-            UserMessageModel aiResponse = new()
-            {
-                User = aiName,
-                Message = aiMsg
+                User = result.Choices[0].Message.Role,
+                Message = result.Choices[0].Message.Content
             };
             return aiResponse;
         }
 
-        private async Task<List<OpenAI_API.Chat.ChatMessage>> CreateFullAiPromptAsync(string user, string userMsg, uint topIndexResults)
+        private async Task<OpenAI_API.Chat.ChatMessage> CreateFullAiPromptAsync(string user, string userMsg, uint topIndexResults)
         {
             List<string> contexts = await GetRelevantContextAsync(userMsg, topIndexResults);
             string context = contexts.First();
@@ -54,22 +57,14 @@ namespace ChatBotCoachWebsite.Helpers
             string prompt = AiCustomPrompt();
             string fullCompletionPrompt = prompt + context + userMsg;
 
-            OpenAIAPI openAi = _openAiService.GetOpenAI();
-
-            //TODO: Doing chat completion requires a list of chat history. 
-            //      Add method for creating new list of chat messages
-            //      Add method for adding to list of chat messages
-            List<OpenAI_API.Chat.ChatMessage> tempChatList = new();
-
-            OpenAI_API.Chat.ChatMessage chat = new()
+            OpenAI_API.Chat.ChatMessage fullAiPrompt = new()
             {
-                Name = "student",
+                Name = user,
                 Role = OpenAI_API.Chat.ChatMessageRole.User,
                 Content = fullCompletionPrompt
             };
-            tempChatList.Add(chat);
 
-            return tempChatList;
+            return fullAiPrompt;
         }
 
         private string AiCustomPrompt() => "Pretend that you are a coach helping teach people about competitive video games, specifically first person shooters. " +
