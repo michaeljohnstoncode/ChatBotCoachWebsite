@@ -4,6 +4,7 @@ using ChatBotCoachWebsite.Helpers.Services;
 using ChatBotCoachWebsite.Data;
 using ChatBotCoachWebsite.Areas.Identity.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ChatBotCoachWebsiteContextConnection") ?? throw new InvalidOperationException("Connection string 'ChatBotCoachWebsiteContextConnection' not found.");
@@ -16,6 +17,7 @@ builder.Services.AddDefaultIdentity<ChatBotCoachWebsiteUser>(options => options.
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSignalR();
+builder.Services.AddRazorPages();
 builder.Services.AddScoped<BuildPineconeIndex>();
 builder.Services.AddScoped<QueryPineconeIndex>();
 builder.Services.AddScoped<ICustomDataProvider, TextFileCustomDataProvider>();
@@ -46,6 +48,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapRazorPages();
 
 app.MapHub<ChatHub>("/chatHub");
 
