@@ -5,7 +5,7 @@ namespace ChatBotCoachWebsite.Helpers
 {
     public interface ISummarizeChatService
     {
-        Task<MessageModel> SummarizeMessage(MessageModel msg);
+        Task<UserMessage> SummarizeMessage(UserMessage msg);
     }
 
     public class SummarizeMessageService : ISummarizeChatService
@@ -16,7 +16,7 @@ namespace ChatBotCoachWebsite.Helpers
             _openAiService = openAIService;
         }
 
-        public async Task<MessageModel> SummarizeMessage(MessageModel msg)
+        public async Task<UserMessage> SummarizeMessage(UserMessage msg)
         {
             //get openai instance
             var openAi = _openAiService.GetOpenAI();
@@ -36,7 +36,7 @@ namespace ChatBotCoachWebsite.Helpers
             //get summary of message
             var result = await openAi.Chat.CreateChatCompletionAsync(openAiChatMsg, model: OpenAI_API.Models.Model.ChatGPTTurbo);
 
-            MessageModel msgSummary = new()
+            UserMessage msgSummary = new()
             {
                 Message = result.Choices[0].Message.Content,
                 User = msg.User

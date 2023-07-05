@@ -1,8 +1,17 @@
 
 using ChatBotCoachWebsite.Helpers;
 using ChatBotCoachWebsite.Helpers.Services;
+using ChatBotCoachWebsite.Data;
+using ChatBotCoachWebsite.Areas.Identity.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("ChatBotCoachWebsiteContextConnection") ?? throw new InvalidOperationException("Connection string 'ChatBotCoachWebsiteContextConnection' not found.");
+
+builder.Services.AddDbContext<ChatBotCoachWebsiteContext>(options => options.UseSqlServer(connectionString, providerOptions => providerOptions.EnableRetryOnFailure()));
+
+
+builder.Services.AddDefaultIdentity<ChatBotCoachWebsiteUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ChatBotCoachWebsiteContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

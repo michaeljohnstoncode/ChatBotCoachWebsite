@@ -24,7 +24,7 @@ public class ChatHub : Hub
         await Clients.All.SendAsync("ReceiveMessage", user, message);
 
         //get the ai's response to the user's message
-        MessageAndConversationModel aiResponse = await _aiChatService.GetAiResponse(user, message, _chatConversation);
+        MessageAndConversation aiResponse = await _aiChatService.GetAiResponse(user, message, _chatConversation);
         //update _chatConversation with new responses
         _chatConversation = aiResponse.ChatConversation;
         //send ai response to chat

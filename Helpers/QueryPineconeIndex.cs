@@ -22,7 +22,7 @@ namespace ChatBotCoachWebsite.Helpers
             _openAiService = openAIService;
         }
 
-        public async Task<MessageModel> AiCompletionResponse(List<OpenAI_API.Chat.ChatMessage> chatConversation)
+        public async Task<UserMessage> AiCompletionResponse(List<OpenAI_API.Chat.ChatMessage> chatConversation)
         {
             OpenAIAPI openAi = _openAiService.GetOpenAI();
 
@@ -41,7 +41,7 @@ namespace ChatBotCoachWebsite.Helpers
             //remove full prompt from the chat conversation, it was added in to help give conversation context for the chat completion. but it is not an actual response of the conversation
             chatConversation.Remove(fullAiPrompt);
 
-            MessageModel aiResponse = new()
+            UserMessage aiResponse = new()
             {
                 User = result.Choices[0].Message.Role,
                 Message = result.Choices[0].Message.Content

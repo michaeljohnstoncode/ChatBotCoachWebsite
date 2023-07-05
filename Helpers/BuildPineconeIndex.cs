@@ -62,7 +62,7 @@ namespace ChatBotCoachWebsite.Helpers
 
         private async Task<Vector[]> CreateVectorsAsync()
         {
-            Task<List<VectorDataModel>> embeddings = CreateOpenAiEmbeddingsAsync();
+            Task<List<VectorData>> embeddings = CreateOpenAiEmbeddingsAsync();
 
             //create vectors to be upserted later into pinecone database
             List<Vector> vectorList = new();
@@ -89,7 +89,7 @@ namespace ChatBotCoachWebsite.Helpers
             return vectors;
         }
 
-        private async Task<List<VectorDataModel>> CreateOpenAiEmbeddingsAsync()
+        private async Task<List<VectorData>> CreateOpenAiEmbeddingsAsync()
         {
             OpenAIAPI openAi = _openAiService.GetOpenAI();
 
@@ -97,12 +97,12 @@ namespace ChatBotCoachWebsite.Helpers
             var customData = _customDataProvider.ReadCustomData();
 
             //create dictionary of embedding results by embedding custom data using openAi
-            List<VectorDataModel> embeddingResults = new();
+            List<VectorData> embeddingResults = new();
             foreach (var data in customData)
             {
                 var result = await openAi.Embeddings.CreateEmbeddingAsync(new EmbeddingRequest(Model.AdaTextEmbedding, data.Value));
 
-                VectorDataModel vectorData = new()
+                VectorData vectorData = new()
                 {
                     FileName = data.Key,
                     FileData = data.Value,

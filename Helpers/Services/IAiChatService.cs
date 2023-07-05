@@ -4,7 +4,7 @@ namespace ChatBotCoachWebsite.Helpers.Services
 {
     public interface IAiChatService
     {
-        Task<MessageAndConversationModel> GetAiResponse(string user, string message, List<OpenAI_API.Chat.ChatMessage> chatConversation);
+        Task<MessageAndConversation> GetAiResponse(string user, string message, List<OpenAI_API.Chat.ChatMessage> chatConversation);
     }
 
     //This class needs to be supplied with the whole chat conversation as context, so the ai can build upon the conversation
@@ -21,7 +21,7 @@ namespace ChatBotCoachWebsite.Helpers.Services
             _summarizeMessage = summarizeMessage;
         }
 
-        public async Task<MessageAndConversationModel> GetAiResponse(string user, string message, List<OpenAI_API.Chat.ChatMessage> chatConversation)
+        public async Task<MessageAndConversation> GetAiResponse(string user, string message, List<OpenAI_API.Chat.ChatMessage> chatConversation)
         {
             //build the conversation context, this affects how the ai will respond
             //this is what the user {user} asked: {message}
@@ -37,10 +37,10 @@ namespace ChatBotCoachWebsite.Helpers.Services
             chatConversation.Add(userMsg);
 
             //get ai response to user's message
-            MessageModel aiResponse = await _queryPineconeIndex.AiCompletionResponse(chatConversation);
+            UserMessage aiResponse = await _queryPineconeIndex.AiCompletionResponse(chatConversation);
 
             //summarize ai response for token conservation (for conversation context)
-            MessageModel summarizedAiResponse = await _summarizeMessage.SummarizeMessage(aiResponse);
+            UserMessage summarizedAiResponse = await _summarizeMessage.SummarizeMessage(aiResponse);
             //add summarized ai response to chatConversation
             OpenAI_API.Chat.ChatMessage aiSummarizedResponse = new()
             {
@@ -51,7 +51,7 @@ namespace ChatBotCoachWebsite.Helpers.Services
             chatConversation.Add(aiSummarizedResponse);
 
             //return ai response and chat conversation context
-            MessageAndConversationModel aiResponseAndConversation = new()
+            MessageAndConversation aiResponseAndConversation = new()
             {
                 MessageModel = aiResponse,
                 ChatConversation = chatConversation
