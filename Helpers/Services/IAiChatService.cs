@@ -7,9 +7,8 @@ namespace ChatBotCoachWebsite.Helpers.Services
         Task<MessageAndConversation> GetAiResponse(string user, string message, List<OpenAI_API.Chat.ChatMessage> chatConversation);
     }
 
-    //This class needs to be supplied with the whole chat conversation as context, so the ai can build upon the conversation
-
-    //possibly to conserve tokens, chat conversation should have each message summarized, to build a context of what was discussed in the conversation
+    //the intention is to conserve tokens so the chat conversation should have each message summarized.
+    //this is used to build the conversation as context for the AI
     public class AiChatService : IAiChatService
     {
         private QueryPineconeIndex _queryPineconeIndex;
@@ -21,6 +20,17 @@ namespace ChatBotCoachWebsite.Helpers.Services
             _summarizeMessage = summarizeMessage;
         }
 
+        /*
+        ***TODO***
+
+           This following method adds the current conversation to a chatConversation variable declared in ChatHub.cs
+           This doesn't seem like a good idea as it doesn't follow a flow of operations.
+
+           What this method does is get the AI's response to the User's message and returns it,
+           but at the same time it adds to the chatConversation variable out of scope in the ChatHub.cs
+
+
+         */
         public async Task<MessageAndConversation> GetAiResponse(string user, string message, List<OpenAI_API.Chat.ChatMessage> chatConversation)
         {
             //build the conversation context, this affects how the ai will respond
@@ -36,11 +46,12 @@ namespace ChatBotCoachWebsite.Helpers.Services
             };
             chatConversation.Add(userMsg);
 
-            //get ai response to user's message
+            //get ai response to user's message by querying Pinecone index
             UserMessage aiResponse = await _queryPineconeIndex.AiCompletionResponse(chatConversation);
 
             //summarize ai response for token conservation (for conversation context)
             UserMessage summarizedAiResponse = await _summarizeMessage.SummarizeMessage(aiResponse);
+
             //add summarized ai response to chatConversation
             OpenAI_API.Chat.ChatMessage aiSummarizedResponse = new()
             {

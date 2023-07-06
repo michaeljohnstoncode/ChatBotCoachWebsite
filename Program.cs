@@ -7,10 +7,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// database server connection stuff
 var connectionString = builder.Configuration.GetConnectionString("ChatBotCoachWebsiteContextConnection") ?? throw new InvalidOperationException("Connection string 'ChatBotCoachWebsiteContextConnection' not found.");
 
 builder.Services.AddDbContext<ChatBotCoachWebsiteContext>(options => options.UseSqlServer(connectionString, providerOptions => providerOptions.EnableRetryOnFailure()));
-
 
 builder.Services.AddDefaultIdentity<ChatBotCoachWebsiteUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ChatBotCoachWebsiteContext>();
 
@@ -18,9 +19,8 @@ builder.Services.AddDefaultIdentity<ChatBotCoachWebsiteUser>(options => options.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSignalR();
 builder.Services.AddRazorPages();
-builder.Services.AddScoped<BuildPineconeIndex>();
+builder.Services.AddScoped<GetPineconeIndex>();
 builder.Services.AddScoped<QueryPineconeIndex>();
-builder.Services.AddScoped<ICustomDataProvider, TextFileCustomDataProvider>();
 builder.Services.AddScoped<IKeyProvider, TextFileKeyProvider>();
 builder.Services.AddScoped<IOpenAIService, OpenAIService>();
 builder.Services.AddScoped<IAiChatService, AiChatService>();
@@ -48,6 +48,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
 app.MapRazorPages();
 
 app.MapHub<ChatHub>("/chatHub");

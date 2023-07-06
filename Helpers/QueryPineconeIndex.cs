@@ -12,10 +12,10 @@ namespace ChatBotCoachWebsite.Helpers
     {
         private IKeyProvider _keyProvider; 
         private IOpenAIService _openAiService;
-        private BuildPineconeIndex _buildPineconeIndex;
-        private uint _topIndexResults = 2; // number of returned vector texts from querying pinecone index for related context
+        private GetPineconeIndex _buildPineconeIndex;
+        private uint _topIndexResults = 2; // number of vector results from querying pinecone index for related context
 
-        public QueryPineconeIndex(IKeyProvider keyProvider, BuildPineconeIndex buildPineconeIndex, IOpenAIService openAIService)
+        public QueryPineconeIndex(IKeyProvider keyProvider, GetPineconeIndex buildPineconeIndex, IOpenAIService openAIService)
         {
             _keyProvider = keyProvider;
             _buildPineconeIndex = buildPineconeIndex;
@@ -73,8 +73,10 @@ namespace ChatBotCoachWebsite.Helpers
 
         private async Task<List<string>> GetRelevantContextAsync(string userQuestion, uint topIndexResults)
         {
+            //query the index for relevant vectors
             ScoredVector[]? scoredVectors = await QueryPineconeIndexAsync(userQuestion, topIndexResults);
 
+            //convert the relevant vector(s) into string text
             List<string> contexts = new();
             foreach(var vector in scoredVectors)
             {
@@ -89,6 +91,7 @@ namespace ChatBotCoachWebsite.Helpers
 
                     if(key == "text")
                     {
+                        //convert the text in MetadataValue object to a string
                         var value = data.Value;
                         object? text = value.Inner;
                         contexts.Add(text.ToString());
@@ -101,18 +104,11 @@ namespace ChatBotCoachWebsite.Helpers
 
         private async Task<ScoredVector[]?> QueryPineconeIndexAsync(string userQuestion, uint topIndexResults)
         {
-            //TODO: Supply an instance of OpenAI to multiple methods
-            //An instance of openai is already created in BuildPineconeIndex.CreateOpenAiEmbeddingsAsync(), so there should only be one created as it doesn't need to be disposed of for different uses
-
             //get openAi instance
             OpenAIAPI openAi = _openAiService.GetOpenAI();
 
             //get pinecone index
             Index<GrpcTransport> index = await _buildPineconeIndex.GetPineconeIndexAsync();
-
-            //TODO: omit this when providing the user question as input somewhere else (probably in the controller)
-            //for now, user question is hardcoded to be used as an example question
-            //userQuestion = "What can I learn about target priority?";
 
             //create query using openai embedding of user's question
             var embeddingQuery = await openAi.Embeddings.CreateEmbeddingAsync(new EmbeddingRequest(Model.AdaTextEmbedding, userQuestion));

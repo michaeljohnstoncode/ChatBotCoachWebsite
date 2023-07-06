@@ -8,10 +8,10 @@ namespace ChatBotCoachWebsite.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly BuildPineconeIndex _buildKnowledgeBase;
+        private readonly GetPineconeIndex _buildKnowledgeBase;
         private readonly QueryPineconeIndex _queryPineconeIndex;
 
-        public HomeController(ILogger<HomeController> logger, BuildPineconeIndex buildKnowledgeBase, QueryPineconeIndex queryPineconeIndex)
+        public HomeController(ILogger<HomeController> logger, GetPineconeIndex buildKnowledgeBase, QueryPineconeIndex queryPineconeIndex)
         {
             _logger = logger;
             _buildKnowledgeBase = buildKnowledgeBase;
