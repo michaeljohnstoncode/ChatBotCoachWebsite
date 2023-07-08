@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0sjM77BF6lZSLlda+8i7ypAwB6H8fOTjc6UFfDwKxWtFh+DgJUCwyYR2bIbgec0Z2+LmH8OpOpVyPQwrFR7b1w==",
+  "dgSpecHash": "GsXZ/ryS2BI52V7FdURetgy9IxBHMkYVFNZRjiz73HKlLHukI37+ku3dgxdFh3hqpAIZUI36szo9wly5VYb5Bg==",
   "success": true,
-  "projectFilePath": "G:\\Code\\Michael\\ChatBotCoach-unit-tests\\ChatBotCoach-unit-tests.csproj",
+  "projectFilePath": "G:\\Code\\Michael\\ChatBotCoachWebsite\\src\\ChatBotCoach-unit-tests\\ChatBotCoach-unit-tests.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

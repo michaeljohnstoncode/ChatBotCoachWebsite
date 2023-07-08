@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Code\\Michael\\ChatBotCoach-logic\\ChatBotCoach-logic.csproj": {}
+    "G:\\Code\\Michael\\ChatBotCoachWebsite\\src\\ChatBotCoach-logic\\ChatBotCoach-logic.csproj": {}
   },
   "projects": {
-    "G:\\Code\\Michael\\ChatBotCoach-logic\\ChatBotCoach-logic.csproj": {
+    "G:\\Code\\Michael\\ChatBotCoachWebsite\\src\\ChatBotCoach-logic\\ChatBotCoach-logic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Code\\Michael\\ChatBotCoach-logic\\ChatBotCoach-logic.csproj",
+        "projectUniqueName": "G:\\Code\\Michael\\ChatBotCoachWebsite\\src\\ChatBotCoach-logic\\ChatBotCoach-logic.csproj",
         "projectName": "ChatBotCoach-logic",
-        "projectPath": "G:\\Code\\Michael\\ChatBotCoach-logic\\ChatBotCoach-logic.csproj",
+        "projectPath": "G:\\Code\\Michael\\ChatBotCoachWebsite\\src\\ChatBotCoach-logic\\ChatBotCoach-logic.csproj",
         "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-        "outputPath": "G:\\Code\\Michael\\ChatBotCoach-logic\\obj\\",
+        "outputPath": "G:\\Code\\Michael\\ChatBotCoachWebsite\\src\\ChatBotCoach-logic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

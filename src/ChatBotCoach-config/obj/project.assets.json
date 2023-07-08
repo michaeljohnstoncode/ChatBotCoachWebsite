@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Code\\Michael\\ChatBotCoach-config\\ChatBotCoach-config.csproj",
+      "projectUniqueName": "G:\\Code\\Michael\\ChatBotCoachWebsite\\src\\ChatBotCoach-config\\ChatBotCoach-config.csproj",
       "projectName": "ChatBotCoach-config",
-      "projectPath": "G:\\Code\\Michael\\ChatBotCoach-config\\ChatBotCoach-config.csproj",
+      "projectPath": "G:\\Code\\Michael\\ChatBotCoachWebsite\\src\\ChatBotCoach-config\\ChatBotCoach-config.csproj",
       "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-      "outputPath": "G:\\Code\\Michael\\ChatBotCoach-config\\obj\\",
+      "outputPath": "G:\\Code\\Michael\\ChatBotCoachWebsite\\src\\ChatBotCoach-config\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
