@@ -1,23 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Code\\Michael\\ChatBotCoachWebsite\\src\\ChatBotCoach-config\\ChatBotCoach-config.csproj": {}
+    "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoach-config\\ChatBotCoach-config.csproj": {}
   },
   "projects": {
-    "G:\\Code\\Michael\\ChatBotCoachWebsite\\src\\ChatBotCoach-config\\ChatBotCoach-config.csproj": {
+    "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoach-config\\ChatBotCoach-config.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Code\\Michael\\ChatBotCoachWebsite\\src\\ChatBotCoach-config\\ChatBotCoach-config.csproj",
+        "projectUniqueName": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoach-config\\ChatBotCoach-config.csproj",
         "projectName": "ChatBotCoach-config",
-        "projectPath": "G:\\Code\\Michael\\ChatBotCoachWebsite\\src\\ChatBotCoach-config\\ChatBotCoach-config.csproj",
-        "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-        "outputPath": "G:\\Code\\Michael\\ChatBotCoachWebsite\\src\\ChatBotCoach-config\\obj\\",
+        "projectPath": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoach-config\\ChatBotCoach-config.csproj",
+        "packagesPath": "C:\\Users\\Michael\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoach-config\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Michael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,6 +27,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -58,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

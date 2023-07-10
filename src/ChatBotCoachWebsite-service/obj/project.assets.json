@@ -6879,7 +6879,7 @@
       ]
     },
     "Microsoft.CSharp/4.5.0": {
-      "sha512": "yWWeTbGCzBOlRPWDCIxiTZW1ecZiMbao0ZT97KKEWdBhrLvUqU8RdzkhzuCRQzvoxzxlR7vytO43OOgFdkxv6g==",
+      "sha512": "kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
       "type": "package",
       "path": "microsoft.csharp/4.5.0",
       "files": [
@@ -7384,7 +7384,7 @@
       ]
     },
     "Microsoft.Extensions.Hosting.Abstractions/2.2.0": {
-      "sha512": "Uupv0fAgMVBgx6xKnlm4TRrD+aTBQBXCr1QxDFREK+oQ4wrG2lCEmIeqn0YhS17H8T+bRKXTyFBCB5LrOZelWw==",
+      "sha512": "+k4AEn68HOJat5gj1TWa6X28WlirNQO9sPIIeQbia+91n03esEtMSSoekSTpMjUzjqtJWQN3McVx0GvSPFHF/Q==",
       "type": "package",
       "path": "microsoft.extensions.hosting.abstractions/2.2.0",
       "files": [
@@ -13224,23 +13224,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\alexa\\.nuget\\packages\\": {},
+    "C:\\Users\\Michael\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Code\\Michael\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\ChatBotCoachWebsite.csproj",
+      "projectUniqueName": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\ChatBotCoachWebsite.csproj",
       "projectName": "ChatBotCoachWebsite",
-      "projectPath": "G:\\Code\\Michael\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\ChatBotCoachWebsite.csproj",
-      "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-      "outputPath": "G:\\Code\\Michael\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\obj\\",
+      "projectPath": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\ChatBotCoachWebsite.csproj",
+      "packagesPath": "C:\\Users\\Michael\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Michael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13248,6 +13251,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -13340,7 +13345,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

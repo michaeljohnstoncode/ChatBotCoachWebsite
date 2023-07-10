@@ -3,7 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatBotCoach-config", "ChatBotCoach-config\ChatBotCoach-config.csproj", "{439A9EC6-782B-4947-9AF5-7BA7FDA6A945}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatBotCoach-logic", "ChatBotCoach-logic\ChatBotCoach-logic.csproj", "{2C56E003-185E-49E8-9B6B-182167D2CA44}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatBotCoach-unit-tests", "ChatBotCoach-unit-tests\ChatBotCoach-unit-tests.csproj", "{2B8080AC-FA74-420F-8916-AE78E168F298}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatBotCoachWebsite", "ChatBotCoachWebsite-service\ChatBotCoachWebsite.csproj", "{5F37F99C-F076-403F-B157-57D5266AADF6}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{439A9EC6-782B-4947-9AF5-7BA7FDA6A945}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{439A9EC6-782B-4947-9AF5-7BA7FDA6A945}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{439A9EC6-782B-4947-9AF5-7BA7FDA6A945}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{439A9EC6-782B-4947-9AF5-7BA7FDA6A945}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C56E003-185E-49E8-9B6B-182167D2CA44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C56E003-185E-49E8-9B6B-182167D2CA44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C56E003-185E-49E8-9B6B-182167D2CA44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C56E003-185E-49E8-9B6B-182167D2CA44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B8080AC-FA74-420F-8916-AE78E168F298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B8080AC-FA74-420F-8916-AE78E168F298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B8080AC-FA74-420F-8916-AE78E168F298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B8080AC-FA74-420F-8916-AE78E168F298}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F37F99C-F076-403F-B157-57D5266AADF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F37F99C-F076-403F-B157-57D5266AADF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F37F99C-F076-403F-B157-57D5266AADF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F37F99C-F076-403F-B157-57D5266AADF6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
