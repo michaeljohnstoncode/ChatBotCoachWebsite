@@ -1,0 +1,15 @@
+G:\Code\Michael\ChatBotCoachWebsite\src\ChatBotCoach-logic\bin\Debug\net6.0\ChatBotCoach-logic.deps.json
+G:\Code\Michael\ChatBotCoachWebsite\src\ChatBotCoach-logic\bin\Debug\net6.0\ChatBotCoach-logic.dll
+G:\Code\Michael\ChatBotCoachWebsite\src\ChatBotCoach-logic\bin\Debug\net6.0\ChatBotCoach-logic.pdb
+G:\Code\Michael\ChatBotCoachWebsite\src\ChatBotCoach-logic\bin\Debug\net6.0\ChatBotCoach-data.dll
+G:\Code\Michael\ChatBotCoachWebsite\src\ChatBotCoach-logic\bin\Debug\net6.0\ChatBotCoach-data.pdb
+G:\Code\Michael\ChatBotCoachWebsite\src\ChatBotCoach-logic\obj\Debug\net6.0\ChatBotCoach-logic.csproj.AssemblyReference.cache
+G:\Code\Michael\ChatBotCoachWebsite\src\ChatBotCoach-logic\obj\Debug\net6.0\ChatBotCoach-logic.GeneratedMSBuildEditorConfig.editorconfig
+G:\Code\Michael\ChatBotCoachWebsite\src\ChatBotCoach-logic\obj\Debug\net6.0\ChatBotCoach-logic.AssemblyInfoInputs.cache
+G:\Code\Michael\ChatBotCoachWebsite\src\ChatBotCoach-logic\obj\Debug\net6.0\ChatBotCoach-logic.AssemblyInfo.cs
+G:\Code\Michael\ChatBotCoachWebsite\src\ChatBotCoach-logic\obj\Debug\net6.0\ChatBotCoach-logic.csproj.CoreCompileInputs.cache
+G:\Code\Michael\ChatBotCoachWebsite\src\ChatBotCoach-logic\obj\Debug\net6.0\ChatBotCoach-logic.csproj.CopyComplete
+G:\Code\Michael\ChatBotCoachWebsite\src\ChatBotCoach-logic\obj\Debug\net6.0\ChatBotCoach-logic.dll
+G:\Code\Michael\ChatBotCoachWebsite\src\ChatBotCoach-logic\obj\Debug\net6.0\refint\ChatBotCoach-logic.dll
+G:\Code\Michael\ChatBotCoachWebsite\src\ChatBotCoach-logic\obj\Debug\net6.0\ChatBotCoach-logic.pdb
+G:\Code\Michael\ChatBotCoachWebsite\src\ChatBotCoach-logic\obj\Debug\net6.0\ref\ChatBotCoach-logic.dll
