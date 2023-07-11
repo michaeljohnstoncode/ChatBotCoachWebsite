@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ChatBotCoach_config.Contracts;
+﻿using ChatBotCoach_config.Contracts;
 using ChatBotCoach_logic.Clients;
 
 namespace ChatBotCoach_config

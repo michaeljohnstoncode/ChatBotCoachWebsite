@@ -1,7 +1,9 @@
 ﻿using ChatBotCoach_data.models;
+using ChatBotCoach_logic.Clients.Contracts;
+using ChatBotCoach_logic.Exceptions;
 using Microsoft.Extensions.Logging;
 
-namespace ChatBotCoach_logic.Clients.Contracts
+namespace ChatBotCoach_logic.Clients
 {
     public abstract class BaseHttpClient<T>
     {

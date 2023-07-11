@@ -1,7 +1,7 @@
 ﻿using ChatBotCoach_data.models;
 using ChatBotCoach_logic.Clients.Contracts;
 
-namespace ChatBotCoach_logic
+namespace ChatBotCoach_logic.Services
 {
     public class TextTokenClaimService : ITokenClaimService
     {

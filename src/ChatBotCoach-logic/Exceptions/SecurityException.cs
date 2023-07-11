@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace ChatBotCoach_logic.Clients
+namespace ChatBotCoach_logic.Exceptions
 {
     /// <summary>
     /// Allows the user to access the security excpetion class to specify instances of specific security violations as errors.
