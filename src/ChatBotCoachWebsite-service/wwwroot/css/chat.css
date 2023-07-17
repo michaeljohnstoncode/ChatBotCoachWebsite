@@ -1,0 +1,71 @@
+﻿/* chat.css */
+
+body
+{
+    background-color: #303030;
+    color: white;
+}
+
+/* Style the chat history box */
+#messagesList {
+    overflow-y: scroll; /* Add a scroll bar to the chat history box */
+    max-height: 60vh; /* Limit the maximum height of the chat history box */
+    padding: 10px;
+}
+
+/* Style individual chat messages */
+.message-container {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.user-message {
+    background-color: #2196F3; /* Lighter blue for user messages */
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: auto; /* Push the user's message to the right side */
+    max-width: 70%; /* Limit the width of the user's message */
+}
+
+.assistant-message {
+    background-color: #1565c0; /* Darker blue for assistant messages */
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 70%; /* Limit the width of the assistant's message */
+}
+
+/* Style the bottom bar containing chat input and send button */
+#bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #212121;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style the chat input box */
+#messageInput {
+    flex: 1;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #424242;
+    color: white;
+}
+
+/* Style the send button */
+#sendButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+

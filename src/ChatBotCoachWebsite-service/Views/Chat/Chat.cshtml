@@ -1,7 +1,12 @@
-﻿
+﻿@using Microsoft.AspNetCore.Identity
+@using ChatBotCoachWebsite.Areas.Identity.Data
+
+@inject UserManager<ChatBotCoachWebsiteUser> UserManager
+
 @{
     ViewData["Title"] = "Chat";
 }
+
 @{
     List<string> messagesList = new();
 
@@ -17,17 +22,30 @@
 }
 
 
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Chat</title>
+    <link href="~/css/chat.css" rel="stylesheet" /> <!-- Link to the chat.css file -->
 </head>
 <body>
-    <input type="text" id="userInput" />
-    <input type="text" id="messageInput" />
-    <input type="button" id="sendButton" value="Send" />
-    <ul id="messagesList"></ul>
+    <div id="messagesList"></div>
+
+    <div id="bottom-bar">
+        <!-- Selection box for game titles -->
+        <select id="gameTitleSelect">
+            <option value="Overwatch 2">Overwatch 2</option>
+            <!-- Add more game titles as needed -->
+        </select>
+
+        <!-- Chat input box -->
+        <input type="text" id="messageInput" />
+
+        <!-- Send button -->
+        <input type="button" id="sendButton" value="Send" />
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/3.1.8/signalr.min.js"></script>
@@ -35,4 +53,3 @@
     <script src="~/js/chat.js"></script>
 </body>
 </html>
-
