@@ -8,13 +8,14 @@ body
 
 /* Style the chat history box */
 #messagesList {
-    overflow-y: scroll; /* Add a scroll bar to the chat history box */
+    overflow-y: auto; /* Add a scroll bar to the chat history box */
     max-height: 60vh; /* Limit the maximum height of the chat history box */
     padding: 10px;
 }
 
 /* Style individual chat messages */
 .message-container {
+    position: relative;
     margin-bottom: 10px;
     display: flex;
 }
