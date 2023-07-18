@@ -2,25 +2,21 @@
 @using ChatBotCoachWebsite.Areas.Identity.Data
 
 @inject UserManager<ChatBotCoachWebsiteUser> UserManager
+@inject SignInManager<ChatBotCoachWebsiteUser> SignInManager
 
 @{
     ViewData["Title"] = "Chat";
 }
 
 @{
-    List<string> messagesList = new();
-
-    void OnSend()
-    {
-        Console.WriteLine($"show {messagesList}");
-    }
-
-    //TODO: Weird error occurs when loading this Chat page. The page takes ~5-10 seconds to load. I think it is because of this error loading SignalR?
-    //      But it seems that SignalR still loads and I am able to send messages back and forth in the ChatHub so... idk
-    //error in browser: DevTools failed to load source map: Could not load content for https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/3.1.8/signalr.min.js.map:
-    //                  HTTP error: status code 404, net::ERR_HTTP_RESPONSE_CODE_FAILURE
+    /*
+    TODO:
+    Weird error occurs when loading this Chat page. The page takes ~5-10 seconds to load. I think it is because of this error loading SignalR?
+    But it seems that SignalR still loads and I am able to send messages back and forth in the ChatHub so... idk
+    error in browser: DevTools failed to load source map: Could not load content for https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/3.1.8/signalr.min.js.map:
+    HTTP error: status code 404, net::ERR_HTTP_RESPONSE_CODE_FAILURE
+    */
 }
-
 
 
 <!DOCTYPE html>
@@ -37,14 +33,24 @@
         <!-- Selection box for game titles -->
         <select id="gameTitleSelect">
             <option value="Overwatch 2">Overwatch 2</option>
-            <!-- Add more game titles as needed -->
         </select>
 
-        <!-- Chat input box -->
-        <input type="text" id="messageInput" />
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <div value="@UserManager.GetUserName(User)" id="userInput"> </div>
+            <!-- Chat input box -->
+            <input type="text" id="messageInput" />
 
-        <!-- Send button -->
-        <input type="button" id="sendButton" value="Send" />
+            <!-- Send button -->
+            <input type="button" id="sendButton" value="Send" />
+        }
+        else
+        {
+            <!-- Display the overlay when the user is not logged in -->
+            <div id="bottom-bar-overlay">
+                <p id="bottom-bar-overlay-text">You must login or signup to access the chat features.</p>
+            </div>
+        }
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -53,3 +59,4 @@
     <script src="~/js/chat.js"></script>
 </body>
 </html>
+
