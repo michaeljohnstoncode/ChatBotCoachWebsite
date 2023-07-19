@@ -9,7 +9,7 @@ body
 /* Style the chat history box */
 #messagesList {
     overflow-y: auto; /* Add a scroll bar to the chat history box */
-    max-height: 70vh; /* Limit the maximum height of the chat history box */
+    max-height: 75vh; /* Limit the maximum height of the chat history box */
     padding: 10px;
 }
 
@@ -26,27 +26,24 @@ body
         background-color: #696969; /* Set the color of the scrollbar track */
     }
 
-/* Style individual chat messages */
-.message-container {
-    position: absolute;
-    margin-bottom: 10px;
-    padding-top: 66px;
-    display: flex;
-}
 
 .user-message {
     background-color: #2196F3; /* Lighter blue for user messages */
     border-radius: 10px;
-    padding: 10px;
+    padding: 15px;
     margin-left: auto; /* Push the user's message to the right side */
+    width: auto;
     max-width: 70%; /* Limit the width of the user's message */
+    margin-bottom: 5px;
 }
 
 .assistant-message {
     background-color: #1565c0; /* Darker blue for assistant messages */
     border-radius: 10px;
     padding: 10px;
+    width: auto;
     max-width: 70%; /* Limit the width of the assistant's message */
+    margin-bottom: 8px;
 }
 
 /* Style the bottom bar containing chat input and send button */
@@ -94,7 +91,7 @@ body
     background-color: #1c1c1c;
     padding-right: 100px;
     color: white;
-    font-size: 16px;
+    font-size: 20px;
     white-space: normal; /* Allow text to wrap to the next line */
     text-align: start;
     overflow-wrap: break-word;
