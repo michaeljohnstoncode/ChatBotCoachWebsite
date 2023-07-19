@@ -31,19 +31,22 @@
     <div id="messagesList"></div>
 
     <div id="bottom-bar">
-        <!-- Selection box for game titles -->
+        <!-- Selection box for game titles
         <select id="gameTitleSelect">
             <option value="Overwatch 2">Overwatch 2</option>
         </select>
-
+         -->
         @if (SignInManager.IsSignedIn(User))
         {
+           
             <div value="@UserManager.GetUserName(User)" id="userInput"> </div>
             <!-- Chat input box -->
-            <input type="text" id="messageInput" />
+            <textarea id="messageInput"></textarea>
+            
 
             <!-- Send button -->
             <input type="button" id="sendButton" value="Send" />
+          
         }
         else
         {

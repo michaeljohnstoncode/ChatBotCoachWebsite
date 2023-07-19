@@ -24,10 +24,14 @@ document.getElementById("sendButton").addEventListener("click", function (event)
     var user = document.getElementById("userInput").value;
     var message = document.getElementById("messageInput").value;
 
+
     // Call the hub method to send the message
     connection.invoke("SendMessage", user, message).catch(function (err) {
         return console.error(err.toString());
     });
+
+    // Clear the chat input text box
+    document.getElementById("messageInput").value = "";
 });
 
 connection.start().then(function () {

@@ -20,7 +20,7 @@ public class ChatHub : Hub
     {
         //receive the user's message and send it to all parties (which is just user and bot's chat log, so user is the only party)
         await Clients.All.SendAsync("ReceiveMessage", user, message);
-
+        /*
         //get the ai's response to the user's message
         MessageAndConversation aiResponse = await _aiChatService.GetAiResponse(user, message, _chatConversation);
 
@@ -29,6 +29,6 @@ public class ChatHub : Hub
 
         //send ai response to chat
         await Clients.All.SendAsync("ReceiveMessage", aiResponse.MessageModel.User, aiResponse.MessageModel.Message);
-
+        */
     }
 }
