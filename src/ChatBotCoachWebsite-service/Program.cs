@@ -13,12 +13,14 @@ var connectionString = builder.Configuration.GetConnectionString("ChatBotCoachWe
 
 builder.Services.AddDbContext<ChatBotCoachWebsiteContext>(options => options.UseSqlServer(connectionString, providerOptions => providerOptions.EnableRetryOnFailure()));
 
+
 builder.Services.AddDefaultIdentity<ChatBotCoachWebsiteUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ChatBotCoachWebsiteContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSignalR();
 builder.Services.AddRazorPages();
+builder.Services.AddScoped<User>();
 builder.Services.AddScoped<GetPineconeIndex>();
 builder.Services.AddScoped<QueryPineconeIndex>();
 builder.Services.AddScoped<IKeyProvider, TextFileKeyProvider>();

@@ -6,6 +6,8 @@
 
 @{
     ViewData["Title"] = "Chat";
+    string isSignedIn = ViewData["IsSignedIn"].ToString();
+    string firstName = ViewData["FirstName"].ToString();
 }
 
 @{
@@ -37,10 +39,10 @@
             <option value="Overwatch 2">Overwatch 2</option>
         </select>
          -->
-        @if (SignInManager.IsSignedIn(User))
+        @if (isSignedIn == "True")
         {
-           
-            <div value="@UserManager.GetUserName(User)" id="userInput"> </div>
+
+            <div value="@firstName" id="userInput"> </div>
             <!-- Chat input box -->
             <textarea id="messageInput"></textarea>
             

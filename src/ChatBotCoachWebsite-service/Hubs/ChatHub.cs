@@ -1,5 +1,8 @@
-﻿using ChatBotCoachWebsite.Helpers.Services;
+﻿using ChatBotCoachWebsite.Areas.Identity.Data;
+using ChatBotCoachWebsite.Data;
+using ChatBotCoachWebsite.Helpers.Services;
 using ChatBotCoachWebsite.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.SignalR;
 using System.Threading.Tasks;
 
