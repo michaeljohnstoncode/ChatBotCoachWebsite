@@ -8,54 +8,58 @@ body
 
 /* Style the chat history box */
 #messagesList {
-    overflow-y: auto; /* Add a scroll bar to the chat history box */
-    max-height: 75vh; /* Limit the maximum height of the chat history box */
+    overflow-y: auto; 
+    max-height: 75vh; 
     padding: 10px;
+    max-width: 80%;
+    margin: 0 auto;
+    list-style: none;
 }
 
     #messagesList::-webkit-scrollbar {
-        width: 8px; /* Set the width of the scrollbar */
+        width: 8px; 
     }
 
     #messagesList::-webkit-scrollbar-thumb {
-        background-color: #bfbdbd; /* Set the color of the scrollbar thumb */
-        border-radius: 10px; /* Make the scrollbar thumb rounded */
+        background-color: #bfbdbd;
+        border-radius: 10px;
     }
 
     #messagesList::-webkit-scrollbar-track {
-        background-color: #696969; /* Set the color of the scrollbar track */
+        background-color: #696969;
     }
 
 
-.user-message {
-    background-color: #2196F3; /* Lighter blue for user messages */
+/* Style individual chat messages */
+.user-message,
+.assistant-message {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 10px;
     border-radius: 10px;
-    padding: 15px;
-    margin-left: auto; /* Push the user's message to the right side */
-    width: auto;
-    max-width: 70%; /* Limit the width of the user's message */
-    margin-bottom: 5px;
+}
+
+.user-message {
+    background-color: #2196F3; 
 }
 
 .assistant-message {
-    background-color: #1565c0; /* Darker blue for assistant messages */
-    border-radius: 10px;
-    padding: 10px;
-    width: auto;
-    max-width: 70%; /* Limit the width of the assistant's message */
-    margin-bottom: 8px;
+    background-color: #1565c0; 
 }
+
 
 /* Style the bottom bar containing chat input and send button */
 #bottom-bar {
     position: fixed;
     bottom: 0;
-    width: 70%;
+    width: 60%; 
     background-color: #212121;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    left: 50%; 
+    transform: translateX(-50%); 
 }
 
 /* Style the bottom bar overlay when the user is not logged in */
@@ -65,11 +69,11 @@ body
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    background-color: rgba(0, 0, 0, 0.7); 
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2; /* Make sure the overlay is on top of other elements */
+    z-index: 2;
 }
 
 #bottom-bar-overlay-text {
@@ -83,8 +87,8 @@ body
 /* Style the chat input box */
 #messageInput {
     flex: 1;
-    height: 100px; /* Adjust the height as desired */
-    resize: none; /* Allow vertical resizing of the text input box */
+    height: 100px; 
+    resize: none; 
     padding: 8px;
     border: 2px solid #696969;
     border-radius: 8px;
@@ -92,24 +96,24 @@ body
     padding-right: 100px;
     color: white;
     font-size: 20px;
-    white-space: normal; /* Allow text to wrap to the next line */
+    white-space: normal;
     text-align: start;
     overflow-wrap: break-word;
-    overflow-y: auto; /* Add a scrollbar if text exceeds the box size */
+    overflow-y: auto; 
 }
 
     /* WebKit Scrollbar styles for the text input box */
     #messageInput::-webkit-scrollbar {
-        width: 8px; /* Set the width of the scrollbar */
+        width: 8px;
     }
 
     #messageInput::-webkit-scrollbar-thumb {
-        background-color: #bfbdbd; /* Set the color of the scrollbar thumb */
-        border-radius: 10px; /* Make the scrollbar thumb rounded */
+        background-color: #bfbdbd; 
+        border-radius: 10px; 
     }
 
     #messageInput::-webkit-scrollbar-track {
-        background-color: #696969; /* Set the color of the scrollbar track */
+        background-color: #696969;
     }
 
 /* Style the send button */
