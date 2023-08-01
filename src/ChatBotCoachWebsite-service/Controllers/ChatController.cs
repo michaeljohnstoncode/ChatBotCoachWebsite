@@ -28,12 +28,11 @@ namespace ChatBotCoachWebsite.Controllers
 
         public async Task<IActionResult> ChatAsync()
         {
-            string firstName = await _user.GetFirstNameAsync(User);
             bool isSignedIn = _user.IsSignedIn(User);
-            ViewData["IsSignedIn"] = isSignedIn;
+            string firstName = await _user.GetFirstNameAsync(User);
             ViewData["FirstName"] = firstName;
+            ViewData["IsSignedIn"] = isSignedIn;
             return View();
-
         }
     }
 }

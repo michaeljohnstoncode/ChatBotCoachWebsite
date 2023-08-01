@@ -8,34 +8,17 @@
     public class TextFileKeyProvider : IKeyProvider
     {
         //current keys: "openaikey", "pineconekey"
-        private const string _apiKeysDir = @"C:\\Users\\Michael\\Desktop\\apikeys";
+        private readonly IConfiguration _config;
+        public TextFileKeyProvider(IConfiguration config)
+        {
+            _config = config;
+        }
 
         public string GetKey(string keyName)
         {
-            var filePath = Path.Combine(_apiKeysDir, $"{keyName}.txt");
-            if (File.Exists(filePath))
-            {
-                return File.ReadAllText(filePath).Trim();
-            }
-
+            var key = _config[$"Keys:{keyName}"];
+            return key;
             throw new ArgumentException($"Key {keyName} not found.");
         }
     }
-    /*
-        //KeyService class currently not necessary because only will need the TextFileKeyProvider class. I will keep this because I am still learning to integrate SOLID principles
-        public class KeyService
-        {
-            private readonly IKeyProvider keyProvider;
-
-            public KeyService(IKeyProvider keyProvider)
-            {
-                this.keyProvider = keyProvider;
-            }
-
-            public string GetApiKey(string keyName)
-            {
-                return keyProvider.GetKey(keyName);
-            }
-        }
-    */
 }

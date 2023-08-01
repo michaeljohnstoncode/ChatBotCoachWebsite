@@ -22,8 +22,9 @@ namespace ChatBotCoachWebsite.Helpers
         public async Task<string> GetFirstNameAsync(System.Security.Claims.ClaimsPrincipal User)
         {
             var user = await _userManager.GetUserAsync(User);
+            if(user == null)
+                return "null";
             var email = user.Email;
-          //  string email = "mike@gmail.com";
             string firstName = _context.Users.FirstOrDefault(x => x.Email == email).FirstName;
             return firstName;
         }
