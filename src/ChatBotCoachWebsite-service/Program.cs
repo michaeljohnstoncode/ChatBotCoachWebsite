@@ -8,29 +8,48 @@ using Microsoft.AspNetCore.Identity;
 using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var services = builder.Services;
 
 
 // database server connection stuff
-//var connectionString = builder.Configuration.GetConnectionString("ChatBotCoachWebsiteContextConnection") ?? throw new InvalidOperationException("Connection string 'ChatBotCoachWebsiteContextConnection' not found.");
-//azure server connectionstring config key
 var connectionString = builder.Configuration["Server:ConnectionString"];
 
-builder.Services.AddDbContext<ChatBotCoachWebsiteContext>(options => options.UseSqlServer(connectionString, providerOptions => providerOptions.EnableRetryOnFailure()));
+services.AddDbContext<ChatBotCoachWebsiteContext>(options => options.UseSqlServer(connectionString, providerOptions => providerOptions.EnableRetryOnFailure()));
 
-builder.Services.AddDefaultIdentity<ChatBotCoachWebsiteUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ChatBotCoachWebsiteContext>();
+services.AddDefaultIdentity<ChatBotCoachWebsiteUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ChatBotCoachWebsiteContext>();
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
-builder.Services.AddSignalR();
-builder.Services.AddRazorPages();
-builder.Services.AddScoped<User>();
-builder.Services.AddScoped<GetPineconeIndex>();
-builder.Services.AddScoped<QueryPineconeIndex>();
-builder.Services.AddScoped<IKeyProvider, TextFileKeyProvider>();
-builder.Services.AddScoped<IOpenAIService, OpenAIService>();
-builder.Services.AddScoped<IAiChatService, AiChatService>();
-builder.Services.AddScoped<ISummarizeChatService, SummarizeMessageService>();
+services.AddControllersWithViews();
+services.AddSignalR();
+services.AddRazorPages();
+services.AddScoped<User>();
+services.AddScoped<GetPineconeIndex>();
+services.AddScoped<QueryPineconeIndex>();
+services.AddScoped<IKeyProvider, TextFileKeyProvider>();
+services.AddScoped<IOpenAIService, OpenAIService>();
+services.AddScoped<IAiChatService, AiChatService>();
+services.AddScoped<ISummarizeChatService, SummarizeMessageService>();
+
+//external login authentication services
+var config = builder.Configuration;
+
+services.AddAuthentication()
+   .AddGoogle(options =>
+   {
+       options.ClientId = config["Authentication:Google:ClientId"];
+       options.ClientSecret = config["Authentication:Google:ClientSecret"];
+   })
+   .AddMicrosoftAccount(microsoftOptions =>
+   {
+       microsoftOptions.ClientId = config["Authentication:Microsoft:ClientId"];
+       microsoftOptions.ClientSecret = config["Authentication:Microsoft:ClientSecret"];
+   })
+   .AddTwitter(twitterOptions =>
+   {
+       twitterOptions.ConsumerKey = config["Authentication:Twitter:ConsumerAPIKey"];
+       twitterOptions.ConsumerSecret = config["Authentication:Twitter:ConsumerSecret"];
+       twitterOptions.RetrieveUserDetails = true;
+   });
 
 var app = builder.Build();
 

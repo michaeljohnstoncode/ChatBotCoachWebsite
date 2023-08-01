@@ -38,7 +38,7 @@ document.getElementById("messageInput").addEventListener("keydown", function (ev
 
 // Function to send the message
 function sendMessage() {
-    var user = document.getElementById("userInput").value;
+    var user = $("#userInput").data("user-name");
     var message = document.getElementById("messageInput").value;
 
     // Check if the message is not empty

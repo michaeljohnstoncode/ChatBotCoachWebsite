@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zFxwvm/+uu5j/JAwxDZg9WTtvYL7MM5QwlQydf6DIlsWMSrPxjUDk+6yy2F3chyLLJZfGSn86efZQCfRomVxNA==",
+  "dgSpecHash": "kz8rvbS18vD8AbB8MbkCEaOIP1vrmu/l48orKDIIQugHo2ikvBk4MER1G/GWBT5sbUxt1coUGNVJgDfMTlqK0Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\ChatBotCoachWebsite.csproj",
   "expectedPackageFiles": [
@@ -65,6 +65,9 @@
     "C:\\Users\\Michael\\.nuget\\packages\\humanizer.core.zh-hant\\2.14.1\\humanizer.core.zh-hant.2.14.1.nupkg.sha512",
     "C:\\Users\\Michael\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Michael\\.nuget\\packages\\microsoft.aspnetcore.authentication.certificate\\7.0.9\\microsoft.aspnetcore.authentication.certificate.7.0.9.nupkg.sha512",
+    "C:\\Users\\Michael\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\7.0.9\\microsoft.aspnetcore.authentication.google.7.0.9.nupkg.sha512",
+    "C:\\Users\\Michael\\.nuget\\packages\\microsoft.aspnetcore.authentication.microsoftaccount\\7.0.9\\microsoft.aspnetcore.authentication.microsoftaccount.7.0.9.nupkg.sha512",
+    "C:\\Users\\Michael\\.nuget\\packages\\microsoft.aspnetcore.authentication.twitter\\7.0.9\\microsoft.aspnetcore.authentication.twitter.7.0.9.nupkg.sha512",
     "C:\\Users\\Michael\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.2.0\\microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",
     "C:\\Users\\Michael\\.nuget\\packages\\microsoft.aspnetcore.authorization.policy\\2.2.0\\microsoft.aspnetcore.authorization.policy.2.2.0.nupkg.sha512",
     "C:\\Users\\Michael\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\2.2.0\\microsoft.aspnetcore.connections.abstractions.2.2.0.nupkg.sha512",

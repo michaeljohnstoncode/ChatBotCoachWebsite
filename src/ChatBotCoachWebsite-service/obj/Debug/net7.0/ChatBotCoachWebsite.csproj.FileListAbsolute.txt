@@ -282,3 +282,6 @@ C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoachWebsite-servic
 C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoachWebsite-service\obj\Debug\net7.0\ChatBotCoachWebsite.pdb
 C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoachWebsite-service\obj\Debug\net7.0\ChatBotCoachWebsite.genruntimeconfig.cache
 C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoachWebsite-service\obj\Debug\net7.0\ref\ChatBotCoachWebsite.dll
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoachWebsite-service\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoachWebsite-service\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoachWebsite-service\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.Twitter.dll

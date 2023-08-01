@@ -10,6 +10,9 @@
         "dependencies": {
           "Azure.Security.KeyVault.Secrets": "4.5.0",
           "Microsoft.AspNetCore.Authentication.Certificate": "7.0.9",
+          "Microsoft.AspNetCore.Authentication.Google": "7.0.9",
+          "Microsoft.AspNetCore.Authentication.MicrosoftAccount": "7.0.9",
+          "Microsoft.AspNetCore.Authentication.Twitter": "7.0.9",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "7.0.9",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.9",
           "Microsoft.AspNetCore.Identity.UI": "7.0.9",
@@ -689,6 +692,30 @@
         },
         "runtime": {
           "lib/net7.0/Microsoft.AspNetCore.Authentication.Certificate.dll": {
+            "assemblyVersion": "7.0.9.0",
+            "fileVersion": "7.0.923.32110"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Google/7.0.9": {
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "assemblyVersion": "7.0.9.0",
+            "fileVersion": "7.0.923.32110"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.MicrosoftAccount/7.0.9": {
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll": {
+            "assemblyVersion": "7.0.9.0",
+            "fileVersion": "7.0.923.32110"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Twitter/7.0.9": {
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Authentication.Twitter.dll": {
             "assemblyVersion": "7.0.9.0",
             "fileVersion": "7.0.923.32110"
           }
@@ -3416,6 +3443,27 @@
       "sha512": "sha512-pvzYY0eupKs3omwLGCm2tVNR+Z05avP1eW2rHaITCKHo40EkKqnW6SJLOoUTcT2jiS1c7GlhAZEWoEEXir99wg==",
       "path": "microsoft.aspnetcore.authentication.certificate/7.0.9",
       "hashPath": "microsoft.aspnetcore.authentication.certificate.7.0.9.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Google/7.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ufDD7ucvHGKbH+mZVMhFNdPNUDhHzFCNykcKFbqQCytiMC1safbAe/aNWVVY6ZHY6dklEF2uXgMbdk18PG6Vww==",
+      "path": "microsoft.aspnetcore.authentication.google/7.0.9",
+      "hashPath": "microsoft.aspnetcore.authentication.google.7.0.9.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.MicrosoftAccount/7.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4EpaDtQFN+Otr2Pb+BsxWe7GQU6YL0Yg4pA29nJqWYE70BVXBZQ1gPVGpcT94FQFhoQRd9XAuEGFyFurhbBAtg==",
+      "path": "microsoft.aspnetcore.authentication.microsoftaccount/7.0.9",
+      "hashPath": "microsoft.aspnetcore.authentication.microsoftaccount.7.0.9.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Twitter/7.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Px7agplPUbVvHsiIHE3ua/DyLw/ZhV3/P6VXbzH6XXGuA2pkXmGDJdrqrhBiYS2RfGMJ0y4yb3JvIB/GapxF3w==",
+      "path": "microsoft.aspnetcore.authentication.twitter/7.0.9",
+      "hashPath": "microsoft.aspnetcore.authentication.twitter.7.0.9.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authorization/2.2.0": {
       "type": "package",
