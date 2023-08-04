@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using System.Net;
 
 namespace ChatBotCoachWebsite.Areas.Identity.Pages.Account
 {
@@ -144,6 +145,7 @@ namespace ChatBotCoachWebsite.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
             // Get the information about the user from the external login provider
             var info = await _signInManager.GetExternalLoginInfoAsync();
+
             if (info == null)
             {
                 ErrorMessage = "Error loading external login information during confirmation.";
@@ -154,9 +156,14 @@ namespace ChatBotCoachWebsite.Areas.Identity.Pages.Account
             {
                 var user = CreateUser();
 
+                string firstName = info.Principal.Claims.FirstOrDefault(c => c.Type == ClaimTypes.GivenName).Value;
+                string lastName = info.Principal.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Surname).Value;
+                user.FirstName = firstName;
+                user.LastName = lastName;
+
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
-
+ 
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
