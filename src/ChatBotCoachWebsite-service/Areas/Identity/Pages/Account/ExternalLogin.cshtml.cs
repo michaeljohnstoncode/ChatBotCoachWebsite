@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using System.Net;
+using ChatBotCoachWebsite.Helpers.Services;
 
 namespace ChatBotCoachWebsite.Areas.Identity.Pages.Account
 {
@@ -29,7 +30,7 @@ namespace ChatBotCoachWebsite.Areas.Identity.Pages.Account
         private readonly UserManager<ChatBotCoachWebsiteUser> _userManager;
         private readonly IUserStore<ChatBotCoachWebsiteUser> _userStore;
         private readonly IUserEmailStore<ChatBotCoachWebsiteUser> _emailStore;
-        private readonly IEmailSender _emailSender;
+        private readonly IEmailService _emailService;
         private readonly ILogger<ExternalLoginModel> _logger;
 
         public ExternalLoginModel(
@@ -37,14 +38,14 @@ namespace ChatBotCoachWebsite.Areas.Identity.Pages.Account
             UserManager<ChatBotCoachWebsiteUser> userManager,
             IUserStore<ChatBotCoachWebsiteUser> userStore,
             ILogger<ExternalLoginModel> logger,
-            IEmailSender emailSender)
+            IEmailService emailService)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _userStore = userStore;
             _emailStore = GetEmailStore();
             _logger = logger;
-            _emailSender = emailSender;
+            _emailService = emailService;
         }
 
         /// <summary>
@@ -181,7 +182,7 @@ namespace ChatBotCoachWebsite.Areas.Identity.Pages.Account
                             values: new { area = "Identity", userId = userId, code = code },
                             protocol: Request.Scheme);
 
-                        await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                        await _emailService.SendEmailAsync(Input.Email, "Confirm your email",
                             $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                         // If account confirmation is required, we need to show the link if we don't have a real email sender

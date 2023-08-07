@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using ChatBotCoachWebsite.Helpers.Services;
 
 namespace ChatBotCoachWebsite.Areas.Identity.Pages.Account
 {
@@ -19,12 +20,12 @@ namespace ChatBotCoachWebsite.Areas.Identity.Pages.Account
     public class RegisterConfirmationModel : PageModel
     {
         private readonly UserManager<ChatBotCoachWebsiteUser> _userManager;
-        private readonly IEmailSender _sender;
+        private readonly IEmailService _emailService;
 
-        public RegisterConfirmationModel(UserManager<ChatBotCoachWebsiteUser> userManager, IEmailSender sender)
+        public RegisterConfirmationModel(UserManager<ChatBotCoachWebsiteUser> userManager, IEmailService emailService)
         {
             _userManager = userManager;
-            _sender = sender;
+            _emailService = emailService;
         }
 
         /// <summary>
@@ -61,7 +62,7 @@ namespace ChatBotCoachWebsite.Areas.Identity.Pages.Account
 
             Email = email;
             // Once you add a real email sender, you should remove this code that lets you confirm the account
-            DisplayConfirmAccountLink = true;
+        /*    DisplayConfirmAccountLink = true;
             if (DisplayConfirmAccountLink)
             {
                 var userId = await _userManager.GetUserIdAsync(user);
@@ -73,7 +74,7 @@ namespace ChatBotCoachWebsite.Areas.Identity.Pages.Account
                     values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                     protocol: Request.Scheme);
             }
-
+        */
             return Page();
         }
     }

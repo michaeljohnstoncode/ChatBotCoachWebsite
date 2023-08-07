@@ -29,6 +29,8 @@ services.AddScoped<IKeyProvider, TextFileKeyProvider>();
 services.AddScoped<IOpenAIService, OpenAIService>();
 services.AddScoped<IAiChatService, AiChatService>();
 services.AddScoped<ISummarizeChatService, SummarizeMessageService>();
+services.AddTransient<IEmailService, EmailService>();
+
 
 //external login authentication services
 var config = builder.Configuration;
