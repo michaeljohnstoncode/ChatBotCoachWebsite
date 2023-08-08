@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FGMHszl8g1uzCNsZ6SU0Tz1UEKZzoY8ZU7I2qx0eAgKPGuc8/kotw4SPC6T+EcwRBWUXcBDy5JfPUusMqePlCw==",
+  "dgSpecHash": "JtLU/yipg8TBGrJ9AxJbPm8KxWqLfm7LHi/iPA72AnXitQTnu4nLSlSGOjMXaAVw558vI7m2u9q85gESHfi3xg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\ChatBotCoachWebsite.csproj",
   "expectedPackageFiles": [
@@ -68,6 +68,7 @@
     "C:\\Users\\Michael\\.nuget\\packages\\humanizer.core.zh-cn\\2.14.1\\humanizer.core.zh-cn.2.14.1.nupkg.sha512",
     "C:\\Users\\Michael\\.nuget\\packages\\humanizer.core.zh-hans\\2.14.1\\humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "C:\\Users\\Michael\\.nuget\\packages\\humanizer.core.zh-hant\\2.14.1\\humanizer.core.zh-hant.2.14.1.nupkg.sha512",
+    "C:\\Users\\Michael\\.nuget\\packages\\microsoft.aspnet.http.features\\1.0.0-rc1-final\\microsoft.aspnet.http.features.1.0.0-rc1-final.nupkg.sha512",
     "C:\\Users\\Michael\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Michael\\.nuget\\packages\\microsoft.aspnetcore.authentication.certificate\\7.0.9\\microsoft.aspnetcore.authentication.certificate.7.0.9.nupkg.sha512",
     "C:\\Users\\Michael\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\7.0.9\\microsoft.aspnetcore.authentication.google.7.0.9.nupkg.sha512",
@@ -288,5 +289,16 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.Http.Features 1.0.0-rc1-final' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.Http.Features",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

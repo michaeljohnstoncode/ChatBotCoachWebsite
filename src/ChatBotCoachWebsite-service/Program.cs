@@ -6,6 +6,7 @@ using ChatBotCoachWebsite.Areas.Identity.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using System.Configuration;
+using Google.Apis.Gmail.v1;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
@@ -40,6 +41,7 @@ services.AddAuthentication()
    {
        options.ClientId = config["Authentication:Google:ClientId"];
        options.ClientSecret = config["Authentication:Google:ClientSecret"];
+       options.Scope.Add(GmailService.Scope.GmailSend);
    })
    .AddMicrosoftAccount(microsoftOptions =>
    {

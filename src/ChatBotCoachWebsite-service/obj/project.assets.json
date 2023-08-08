@@ -832,6 +832,22 @@
           }
         }
       },
+      "Microsoft.AspNet.Http.Features/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "1.0.0-rc1-final"
+        },
+        "compile": {
+          "lib/net451/Microsoft.AspNet.Http.Features.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net451/Microsoft.AspNet.Http.Features.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Authentication.Abstractions/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -5981,6 +5997,21 @@
         "lib/netstandard1.0/zh-Hant/Humanizer.resources.dll",
         "lib/netstandard2.0/zh-Hant/Humanizer.resources.dll",
         "logo.png"
+      ]
+    },
+    "Microsoft.AspNet.Http.Features/1.0.0-rc1-final": {
+      "sha512": "WlscfdAvN8XaaK1iv1Iewp5emei7+0SlXNkUh7kMJpeaS6K0GhwNmwqZR6VrT1oN+Maw98nEONHS34/suqQwOA==",
+      "type": "package",
+      "path": "microsoft.aspnet.http.features/1.0.0-rc1-final",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/dotnet5.4/Microsoft.AspNet.Http.Features.dll",
+        "lib/dotnet5.4/Microsoft.AspNet.Http.Features.xml",
+        "lib/net451/Microsoft.AspNet.Http.Features.dll",
+        "lib/net451/Microsoft.AspNet.Http.Features.xml",
+        "microsoft.aspnet.http.features.1.0.0-rc1-final.nupkg.sha512",
+        "microsoft.aspnet.http.features.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication.Abstractions/2.2.0": {
@@ -13488,6 +13519,7 @@
       "Azure.Security.KeyVault.Secrets >= 4.5.0",
       "Google.Apis.Auth >= 1.61.0",
       "Google.Apis.Gmail.v1 >= 1.61.0.3105",
+      "Microsoft.AspNet.Http.Features >= 1.0.0-rc1-final",
       "Microsoft.AspNetCore.Authentication.Certificate >= 7.0.9",
       "Microsoft.AspNetCore.Authentication.Google >= 7.0.9",
       "Microsoft.AspNetCore.Authentication.MicrosoftAccount >= 7.0.9",
@@ -13565,6 +13597,10 @@
           "Google.Apis.Gmail.v1": {
             "target": "Package",
             "version": "[1.61.0.3105, )"
+          },
+          "Microsoft.AspNet.Http.Features": {
+            "target": "Package",
+            "version": "[1.0.0-rc1-final, )"
           },
           "Microsoft.AspNetCore.Authentication.Certificate": {
             "target": "Package",
@@ -13655,5 +13691,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.Http.Features 1.0.0-rc1-final' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.Http.Features",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

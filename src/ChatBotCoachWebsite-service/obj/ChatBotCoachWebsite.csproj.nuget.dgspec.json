@@ -59,6 +59,10 @@
               "target": "Package",
               "version": "[1.61.0.3105, )"
             },
+            "Microsoft.AspNet.Http.Features": {
+              "target": "Package",
+              "version": "[1.0.0-rc1-final, )"
+            },
             "Microsoft.AspNetCore.Authentication.Certificate": {
               "target": "Package",
               "version": "[7.0.9, )"

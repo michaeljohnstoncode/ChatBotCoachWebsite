@@ -294,3 +294,4 @@ C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoachWebsite-servic
 C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoachWebsite-service\bin\Debug\net7.0\MimeKit.dll
 C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoachWebsite-service\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoachWebsite-service\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoachWebsite-service\bin\Debug\net7.0\Microsoft.AspNet.Http.Features.dll
