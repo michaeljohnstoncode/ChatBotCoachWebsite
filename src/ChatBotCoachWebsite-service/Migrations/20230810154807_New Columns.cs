@@ -21,7 +21,7 @@ namespace ChatBotCoachWebsite.Migrations
                 name: "Gamertag",
                 table: "AspNetUsers",
                 type: "nvarchar(100)",
-                nullable: false,
+                nullable: true,
                 defaultValue: "");
 
             migrationBuilder.AddColumn<string>(

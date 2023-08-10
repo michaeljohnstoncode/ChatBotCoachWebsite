@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
@@ -20,8 +21,8 @@ public class ChatBotCoachWebsiteUser : IdentityUser
     public string LastName { get; set; }
 
     [PersonalData]
-    [Column(TypeName = "nvarchar(100)")]
-    public string Gamertag { get; set; }
+    [Column(TypeName = "nvarchar(100)"), AllowNull]
+    public string? Gamertag { get; set; }
     
 }
 

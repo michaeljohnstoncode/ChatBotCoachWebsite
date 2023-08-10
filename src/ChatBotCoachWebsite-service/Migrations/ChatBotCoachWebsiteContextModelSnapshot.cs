@@ -46,7 +46,6 @@ namespace ChatBotCoachWebsite.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Gamertag")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("LastName")
