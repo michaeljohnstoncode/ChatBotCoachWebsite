@@ -42,7 +42,9 @@ services.AddAuthentication()
        options.ClientId = config["Authentication:Google:ClientId"];
        options.ClientSecret = config["Authentication:Google:ClientSecret"];
        options.Scope.Add(GmailService.Scope.GmailSend);
-   })
+   });
+   /*
+    //Could add this later on, but for now Google external login is enough
    .AddMicrosoftAccount(microsoftOptions =>
    {
        microsoftOptions.ClientId = config["Authentication:Microsoft:ClientId"];
@@ -54,7 +56,7 @@ services.AddAuthentication()
        twitterOptions.ConsumerSecret = config["Authentication:Twitter:ConsumerSecret"];
        twitterOptions.RetrieveUserDetails = true;
    });
-
+   */
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

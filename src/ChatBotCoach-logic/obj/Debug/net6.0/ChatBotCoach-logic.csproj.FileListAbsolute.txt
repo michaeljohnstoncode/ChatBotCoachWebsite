@@ -1,0 +1,12 @@
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-logic\bin\Debug\net6.0\ChatBotCoach-logic.deps.json
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-logic\bin\Debug\net6.0\ChatBotCoach-logic.dll
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-logic\bin\Debug\net6.0\ChatBotCoach-logic.pdb
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-logic\obj\Debug\net6.0\ChatBotCoach-logic.csproj.AssemblyReference.cache
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-logic\obj\Debug\net6.0\ChatBotCoach-logic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-logic\obj\Debug\net6.0\ChatBotCoach-logic.AssemblyInfoInputs.cache
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-logic\obj\Debug\net6.0\ChatBotCoach-logic.AssemblyInfo.cs
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-logic\obj\Debug\net6.0\ChatBotCoach-logic.csproj.CoreCompileInputs.cache
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-logic\obj\Debug\net6.0\ChatBotCoach-logic.dll
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-logic\obj\Debug\net6.0\refint\ChatBotCoach-logic.dll
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-logic\obj\Debug\net6.0\ChatBotCoach-logic.pdb
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-logic\obj\Debug\net6.0\ref\ChatBotCoach-logic.dll

@@ -1,0 +1,12 @@
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-unit-tests\bin\Debug\net6.0\ChatBotCoach-unit-tests.deps.json
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-unit-tests\bin\Debug\net6.0\ChatBotCoach-unit-tests.dll
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-unit-tests\bin\Debug\net6.0\ChatBotCoach-unit-tests.pdb
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-unit-tests\obj\Debug\net6.0\ChatBotCoach-unit-tests.csproj.AssemblyReference.cache
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-unit-tests\obj\Debug\net6.0\ChatBotCoach-unit-tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-unit-tests\obj\Debug\net6.0\ChatBotCoach-unit-tests.AssemblyInfoInputs.cache
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-unit-tests\obj\Debug\net6.0\ChatBotCoach-unit-tests.AssemblyInfo.cs
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-unit-tests\obj\Debug\net6.0\ChatBotCoach-unit-tests.csproj.CoreCompileInputs.cache
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-unit-tests\obj\Debug\net6.0\ChatBotCoach-unit-tests.dll
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-unit-tests\obj\Debug\net6.0\refint\ChatBotCoach-unit-tests.dll
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-unit-tests\obj\Debug\net6.0\ChatBotCoach-unit-tests.pdb
+C:\Users\Michael\source\repos\ChatBotCoachWebsite\src\ChatBotCoach-unit-tests\obj\Debug\net6.0\ref\ChatBotCoach-unit-tests.dll
