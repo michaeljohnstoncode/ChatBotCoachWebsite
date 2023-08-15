@@ -13,12 +13,12 @@ public class ChatBotCoachWebsiteUser : IdentityUser
 {
     
     [PersonalData]
-    [Column(TypeName = "nvarchar(100)")]
-    public string FirstName { get; set; }
+    [Column(TypeName = "nvarchar(100)"), AllowNull]
+    public string? FirstName { get; set; }
 
     [PersonalData]
-    [Column(TypeName = "nvarchar(100)")]
-    public string LastName { get; set; }
+    [Column(TypeName = "nvarchar(100)"), AllowNull]
+    public string? LastName { get; set; }
 
     [PersonalData]
     [Column(TypeName = "nvarchar(100)"), AllowNull]
