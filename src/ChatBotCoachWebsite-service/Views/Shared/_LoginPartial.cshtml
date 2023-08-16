@@ -1,4 +1,5 @@
-﻿@using Microsoft.AspNetCore.Identity
+﻿@using ChatBotCoachWebsite.Areas.Identity.Pages.Account;
+@using Microsoft.AspNetCore.Identity
 @using ChatBotCoachWebsite.Areas.Identity.Data
 
 @inject SignInManager<ChatBotCoachWebsiteUser> SignInManager
@@ -25,7 +26,7 @@ else
 
     </li>
     <li class="nav-item">
-        <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">
+        <a class="nav-link text-dark btn btn-primary" id="login" data-bs-toggle="modal" data-bs-target="#loginModal">
             Login
         </a>
     </li>

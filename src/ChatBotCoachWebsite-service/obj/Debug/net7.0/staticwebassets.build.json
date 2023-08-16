@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "M3eT3Wj7LqMPrDaUcktwr+a12qpPMRFtcXUEXzA0XB8=",
+  "Hash": "hPGdSYbqhpgL4zdPh1GZO0S0Q/3OzPj6uUsj7o7FNZk=",
   "Source": "ChatBotCoachWebsite",
   "BasePath": "_content/ChatBotCoachWebsite",
   "Mode": "Default",
@@ -1154,6 +1154,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\google-icon.png"
+    },
+    {
+      "Identity": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\js\\account.js",
+      "SourceId": "ChatBotCoachWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\",
+      "BasePath": "_content/ChatBotCoachWebsite",
+      "RelativePath": "js/account.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\account.js"
     },
     {
       "Identity": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\js\\chat.js",

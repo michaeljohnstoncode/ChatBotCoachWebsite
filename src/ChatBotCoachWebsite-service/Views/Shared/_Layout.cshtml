@@ -50,5 +50,45 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Log in</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Content will be injected here by AJAX -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#loginModal').on('show.bs.modal', function (e) {
+                if ($('.modal-body').is(':empty')) {
+                    $.get('/Identity/Account/Login', function (data) {
+                        $('.modal-body').html(data);
+                    });
+                }
+            });
+        });
+
+        $.get('/Identity/Account/Login', function (data) {
+            $('.modal-body').html(data);
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            console.error("Error loading login form:", textStatus, errorThrown);
+        });
+
+
+        $('#loginModal').on('shown.bs.modal', function () {
+            $('#Input_UserNameOrEmail').trigger('focus')
+        });
+    </script>
+
+
 </body>
 </html>

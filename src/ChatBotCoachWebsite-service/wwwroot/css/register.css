@@ -1,50 +1,55 @@
 ﻿body {
-    background-color: #f4f4f4;
+    background-color: #050520; /* secondary color */
 }
 
 .container {
-    max-width: 800px;
-    margin: 50px auto;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #303034;
+    border-radius: 12px;
+    padding: 20px 0px 20px 0px;
+    margin-top: 50px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
 }
 
-.form-floating {
-    position: relative;
-    margin-bottom: 20px;
-}
-
-    .form-floating > label {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        transition: 0.3s;
-        color: #888;
-    }
-
-    .form-floating > input:focus + label,
-    .form-floating > input:not(:placeholder-shown) + label {
-        top: -10px;
-        left: 8px;
-        font-size: 12px;
-        color: #333;
-    }
-
-.text-danger {
-    color: #d9534f;
+h1, h2, h3 {
+    color: #f2f2ff; /* primary color */
+    font-family: sans-serif;
 }
 
 .btn-primary {
-    background-color: #007bff;
-    border: none;
+    background-color: #03045e;
+    border-color: #06062b;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
 }
 
-.col-md-4 {
-    margin: 0 auto;
-}
+    .btn-primary:hover {
+        background-color: #06062b; /* a slightly darker shade of primary color for hover effect */
+        border-color: #06062b;
+    }
 
-.external-login-buttons button {
+.external-login-buttons .btn {
     margin-right: 10px;
-    margin-bottom: 10px;
+    background-color: #f2f2ff;
+    color: #03045e;
+    border: 1px solid #f2f2ff;
+}
+
+.google-logo {
+    margin-right: 8px;
+}
+
+.form-control {
+    border: 1px solid #03045e;
+}
+
+    .form-control:focus {
+        border-color: #03045e;
+        box-shadow: 0 0 0 0.25rem rgba(3, 4, 94, 0.25); /* rgba format of primary color */
+    }
+
+.text-danger {
+    color: #ff0000; /* A general color for showing validation errors */
+}
+
+.remember-me-label {
+    color: #ffffff;
 }

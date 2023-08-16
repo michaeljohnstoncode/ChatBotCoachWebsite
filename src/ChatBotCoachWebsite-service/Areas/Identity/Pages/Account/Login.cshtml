@@ -3,7 +3,7 @@
 
 @{
     ViewData["Title"] = "Log in";
-    Layout = "/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
 
 <head>
@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="checkbox mb-3">
-                        <label asp-for="Input.RememberMe">
+                        <label asp-for="Input.RememberMe" class="remember-me-label">
                             <input class="form-check-input" asp-for="Input.RememberMe" />
                             @Html.DisplayNameFor(m => m.Input.RememberMe)
                         </label>
@@ -73,6 +73,7 @@
         </div>
     </div>
 </div>
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

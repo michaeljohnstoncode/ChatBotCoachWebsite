@@ -114,12 +114,12 @@ namespace ChatBotCoachWebsite.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = await _userManager.FindByEmailAsync(Input.UserNameOrEmail);
-                if(user == null)
+                if (user == null)
                 {
                     user = await _userManager.Users.SingleOrDefaultAsync(u => u.Gamertag == Input.UserNameOrEmail);
                 }
 
-                if(user == null)
+                if (user == null)
                 {
                     ModelState.AddModelError("", "Invalid login attempt before login");
                     return Page();
@@ -135,7 +135,7 @@ namespace ChatBotCoachWebsite.Areas.Identity.Pages.Account
                 }
                 if (result.RequiresTwoFactor)
                 {
-                    return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
+                    return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, Input.RememberMe });
                 }
                 if (result.IsLockedOut)
                 {
