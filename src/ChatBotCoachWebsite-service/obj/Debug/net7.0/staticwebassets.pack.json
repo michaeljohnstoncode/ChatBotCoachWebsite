@@ -5,12 +5,12 @@
       "PackagePath": "staticwebassets\\ChatBotCoachWebsite.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\css\\chat.css",
-      "PackagePath": "staticwebassets\\css\\chat.css"
+      "Id": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\css\\account.css",
+      "PackagePath": "staticwebassets\\css\\account.css"
     },
     {
-      "Id": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\css\\register.css",
-      "PackagePath": "staticwebassets\\css\\register.css"
+      "Id": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\css\\chat.css",
+      "PackagePath": "staticwebassets\\css\\chat.css"
     },
     {
       "Id": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\css\\site.css",
@@ -23,10 +23,6 @@
     {
       "Id": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\images\\google-icon.png",
       "PackagePath": "staticwebassets\\images\\google-icon.png"
-    },
-    {
-      "Id": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\js\\account.js",
-      "PackagePath": "staticwebassets\\js\\account.js"
     },
     {
       "Id": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\js\\chat.js",

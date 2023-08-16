@@ -50,12 +50,12 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
-    <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <!-- Account Modal -->
+    <div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="accountModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Log in</h5>
+                    <h5 class="modal-title" id="accountModalLabel">Modal Title</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -66,26 +66,22 @@
     </div>
 
 
+
     <script>
         $(document).ready(function () {
-            $('#loginModal').on('show.bs.modal', function (e) {
-                if ($('.modal-body').is(':empty')) {
-                    $.get('/Identity/Account/Login', function (data) {
+            $('#accountModal').on('show.bs.modal', function (e) {
+                const targetURL = $(e.relatedTarget).data('url');
+                const modalTitle = $(e.relatedTarget).data('title');
+                $('#accountModalLabel').text(modalTitle);
+
+                if ($('.modal-body').is(':empty') || $(e.relatedTarget).data('force-reload') === true) {
+                    $.get(targetURL, function (data) {
                         $('.modal-body').html(data);
+                    }).fail(function (jqXHR, textStatus, errorThrown) {
+                        console.error("Error loading form:", textStatus, errorThrown);
                     });
                 }
             });
-        });
-
-        $.get('/Identity/Account/Login', function (data) {
-            $('.modal-body').html(data);
-        }).fail(function (jqXHR, textStatus, errorThrown) {
-            console.error("Error loading login form:", textStatus, errorThrown);
-        });
-
-
-        $('#loginModal').on('shown.bs.modal', function () {
-            $('#Input_UserNameOrEmail').trigger('focus')
         });
     </script>
 

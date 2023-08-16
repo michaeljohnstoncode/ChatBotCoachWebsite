@@ -20,15 +20,17 @@
 else
 {
     <li class="nav-item">
-        <a class="nav-link text-dark" id="register" asp-area="Identity" asp-page="/Account/Register">
-            Register
-        </a>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#accountModal"
+             data-url="/Identity/Account/Register" data-title="Register" data-force-reload="true">
+                Register
+            </button>
 
     </li>
     <li class="nav-item">
-        <a class="nav-link text-dark btn btn-primary" id="login" data-bs-toggle="modal" data-bs-target="#loginModal">
-            Login
-        </a>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#accountModal"
+             data-url="/Identity/Account/Login" data-title="Log in" data-force-reload="true">
+                Login
+            </button>
     </li>
 }
 </ul>
