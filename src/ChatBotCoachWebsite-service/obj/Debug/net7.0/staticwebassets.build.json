@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qieODR6GRJyyacXjlcg8ITWQ7r5BhoFkaJ9Tehwmbo0=",
+  "Hash": "DkHKF2/XFWaDJ0bxSNnAuvGX6y2CMZ605+ULMZPJTVw=",
   "Source": "ChatBotCoachWebsite",
   "BasePath": "_content/ChatBotCoachWebsite",
   "Mode": "Default",
@@ -1171,6 +1171,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\chat.js"
+    },
+    {
+      "Identity": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\js\\layout.js",
+      "SourceId": "ChatBotCoachWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\",
+      "BasePath": "_content/ChatBotCoachWebsite",
+      "RelativePath": "js/layout.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\layout.js"
     },
     {
       "Identity": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\js\\site.js",

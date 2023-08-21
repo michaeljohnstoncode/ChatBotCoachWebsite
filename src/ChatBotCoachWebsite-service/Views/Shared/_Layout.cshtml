@@ -1,5 +1,17 @@
 ﻿<!DOCTYPE html>
+
+<style>
+    .modal-content.no-border {
+        border: none;
+        background-color: red;
+        box-shadow: none;
+    }
+
+
+</style>
+
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -50,41 +62,36 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
-    <!-- Account Modal -->
-    <div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="accountModalLabel" aria-hidden="true">
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="accountModalLabel">Modal Title</h5>
+                    <h5 class="modal-title" id="loginModalLabel">test</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!-- Content will be injected here by AJAX -->
+                    <!-- Content for Login will be injected here by AJAX in layout.js -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content no-border">
+                <div class="modal-body">
+                    <!-- Close Button 
+                    <button type="button" class="btn-close float-end mb-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                    -->
+                    <div id="ajax-content-register"></div>  <!-- Specific container for AJAX content -->
                 </div>
             </div>
         </div>
     </div>
 
 
-
-    <script>
-        $(document).ready(function () {
-            $('#accountModal').on('show.bs.modal', function (e) {
-                const targetURL = $(e.relatedTarget).data('url');
-                const modalTitle = $(e.relatedTarget).data('title');
-                $('#accountModalLabel').text(modalTitle);
-
-                if ($('.modal-body').is(':empty') || $(e.relatedTarget).data('force-reload') === true) {
-                    $.get(targetURL, function (data) {
-                        $('.modal-body').html(data);
-                    }).fail(function (jqXHR, textStatus, errorThrown) {
-                        console.error("Error loading form:", textStatus, errorThrown);
-                    });
-                }
-            });
-        });
-    </script>
-
-
+    <script src="~/js/layout.js"></script>
 </body>
 </html>
