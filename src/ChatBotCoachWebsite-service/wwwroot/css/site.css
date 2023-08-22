@@ -20,3 +20,25 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/* This btn-close is in Register and Login pages, but the css can only be applied here because it is the modal button close */
+.account .btn-close.btn-close-white {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.modal-content.no-border {
+    background-color: transparent;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 10px 30px rgb(0, 0, 0, .5);
+}
+
+.modal-body, .modal-body > * {
+    border-radius: 15px;
+    background-color: #303034;
+    border-radius: 15px;
+    padding: 20px 0px 20px 0px;
+
+}

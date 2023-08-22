@@ -2,21 +2,10 @@
     background-color: #050520; /* secondary color */
 }
 
-.account > .container {
-    background-color: #303034;
-    border-radius: 12px;
-    padding: 20px 0px 20px 0px;
-    margin-top: 50px;
-    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-
 .account h1, .account h2, .account h3 {
     color: #f2f2ff; /* primary color */
     font-family: sans-serif;
 }
-
-
 
 .account .btn-primary {
     background-color: #03045e;

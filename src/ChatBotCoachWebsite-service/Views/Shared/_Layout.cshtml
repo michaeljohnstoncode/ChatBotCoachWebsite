@@ -1,15 +1,5 @@
 ﻿<!DOCTYPE html>
 
-<style>
-    .modal-content.no-border {
-        border: none;
-        background-color: red;
-        box-shadow: none;
-    }
-
-
-</style>
-
 <html lang="en">
 
 <head>
@@ -49,13 +39,6 @@
             @RenderBody()
         </main>
     </div>
-    <!--
-    <footer class="border-top footer text-muted">
-        <div class="container">
-          &copy; 2023 - ChatBotCoachWebsite - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    -->
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -65,13 +48,9 @@
     <!-- Login Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">test</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
+            <div class="modal-content no-border">
                 <div class="modal-body">
-                    <!-- Content for Login will be injected here by AJAX in layout.js -->
+                    <div id="ajax-content-login"></div>  <!-- Specific container for AJAX content -->
                 </div>
             </div>
         </div>
@@ -82,9 +61,6 @@
         <div class="modal-dialog">
             <div class="modal-content no-border">
                 <div class="modal-body">
-                    <!-- Close Button 
-                    <button type="button" class="btn-close float-end mb-2" data-bs-dismiss="modal" aria-label="Close"></button>
-                    -->
                     <div id="ajax-content-register"></div>  <!-- Specific container for AJAX content -->
                 </div>
             </div>
