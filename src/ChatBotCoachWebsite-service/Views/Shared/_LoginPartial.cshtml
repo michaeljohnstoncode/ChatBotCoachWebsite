@@ -4,6 +4,9 @@
 
 @inject SignInManager<ChatBotCoachWebsiteUser> SignInManager
 @inject UserManager<ChatBotCoachWebsiteUser> UserManager
+<head>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
 
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
@@ -21,16 +24,16 @@ else
 {
     <li class="nav-item">
             <!-- Register modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal"
-             data-url="/Identity/Account/Register" data-title="Register" data-force-reload="true">
+            <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#registerModal"
+                    data-url="/Identity/Account/Register" data-title="Register" data-force-reload="true">
                 Register
             </button>
     </li>
     <li class="nav-item">
             <!-- Login modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal"
-             data-url="/Identity/Account/Login" data-title="Log in" data-force-reload="true">
-                Login 
+            <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#loginModal"
+                    data-url="/Identity/Account/Login" data-title="Log in" data-force-reload="true">
+                Login
             </button>
     </li>
 }

@@ -3,38 +3,45 @@
     ViewData["Title"] = "Home";
 }
 
-<div class="container">
-    <header class="header text-center my-4">
-        <h1>Welcome to GamingCoach!</h1>
-        <p class="lead">Some attention grabbing statement</p>
-    </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>GamingCoach AI</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to GamingCoach AI!</h1>
+            <p>Transforming the way you game with the power of artificial intelligence.</p>
+        </header>
 
-    <section id="games">
-        <h2 class="text-center my-4">Our Supported Games:</h2>
-        <div class="row">
-            @for (int i = 0; i < 6; i++)
-            {
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img class="card-img-top" src="path/to/image" alt="Game Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Game Name</h5>
-                        </div>
+        <section id="games">
+            <h2>Our Supported Games</h2>
+            <div class="game-grid">
+                @for (int i = 0; i < 6; i++)
+                {
+                    <div class="game-card">
+                        <img src="path/to/image" alt="Game Image">
+                        <h5>Game Name</h5>
                     </div>
-                </div>
-            }
-        </div>
-    </section>
+                }
+            </div>
+        </section>
 
-    <section id="try-out" class="my-4">
-        <h2 class="text-center">Try It Out!</h2>
-        <p class="text-center">
-            Some information here...
-            <a href="@Url.Action("Login", "Account")" class="btn btn-primary">Sign Up</a> <!-- or link to chat page if signed in -->
-        </p>
-        <div id="real-examples" class="mt-4">
-            <h3 class="text-center">Real Examples</h3>
-            <!-- Text and images showcasing the chat bot -->
-        </div>
-    </section>
-</div>
+        <section id="try-out">
+            <h2>Experience the Future</h2>
+            <p>
+                Join the AI revolution and elevate your gaming strategies.
+                <a href="@Url.Action("Login", "Account")" class="btn">Sign Up</a>
+            </p>
+            <div id="real-examples">
+                <h3>See It In Action</h3>
+                <!-- Add chatbot mockup graphics or interactive demo if possible -->
+            </div>
+        </section>
+    </div>
+</body>
+</html>

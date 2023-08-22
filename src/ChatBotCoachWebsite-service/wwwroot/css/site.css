@@ -42,3 +42,36 @@ body {
     padding: 20px 0px 20px 0px;
 
 }
+
+body {
+    background-color: #121212;
+    color: #EAEAEA;
+}
+
+.bg-dark-blue {
+    background-color: #002f6b;
+}
+
+.navbar-dark .navbar-brand,
+.navbar-dark .navbar-nav .nav-link {
+    color: #EAEAEA;
+    transition: color 0.3s ease;
+}
+
+    .navbar-dark .navbar-brand:hover,
+    .navbar-dark .navbar-nav .nav-link:hover {
+        color: #57B2E8;
+    }
+
+.btn-outline-light {
+    border-color: #57B2E8;
+    color: #57B2E8;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+    .btn-outline-light:hover {
+        background-color: #57B2E8;
+        color: #121212;
+    }
+
+/* Other styles remain the same */

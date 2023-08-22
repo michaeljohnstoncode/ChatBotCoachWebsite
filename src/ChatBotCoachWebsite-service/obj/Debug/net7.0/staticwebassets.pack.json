@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\images\\google-icon.png"
     },
     {
+      "Id": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\images\\ow2wallpaper.png",
+      "PackagePath": "staticwebassets\\images\\ow2wallpaper.png"
+    },
+    {
       "Id": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\js\\chat.js",
       "PackagePath": "staticwebassets\\js\\chat.js"
     },
