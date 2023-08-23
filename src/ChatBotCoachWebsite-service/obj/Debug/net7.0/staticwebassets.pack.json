@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\images\\ow2wallpaper.png"
     },
     {
+      "Id": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\images\\valorantwallpaper.png",
+      "PackagePath": "staticwebassets\\images\\valorantwallpaper.png"
+    },
+    {
       "Id": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\js\\chat.js",
       "PackagePath": "staticwebassets\\js\\chat.js"
     },
