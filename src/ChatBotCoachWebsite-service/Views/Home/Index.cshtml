@@ -9,9 +9,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
     <title>GamingCoach AI</title>
 </head>
 <body>
+    <div id="particles-js"></div>
+
     <div class="container">
         <header>
             <h1>Welcome to GamingCoach AI!</h1>
@@ -35,7 +38,11 @@
             <h2>Experience the Future</h2>
             <p>
                 Join the AI revolution and elevate your gaming strategies.
-                <a href="@Url.Action("Login", "Account")" class="btn">Sign Up</a>
+                <!-- Register modal -->
+                <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#registerModal"
+                        data-url="/Identity/Account/Register" data-title="Register" data-force-reload="true">
+                    Sign Up
+                </button>
             </p>
             <div id="real-examples">
                 <h3>See It In Action</h3>
@@ -43,5 +50,10 @@
             </div>
         </section>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="~/js/particles.js"></script>
+
+
 </body>
 </html>

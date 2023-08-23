@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eLVtsAhOSD42dqVxDyk0yDFZ3W/1IpH2T0Maq8RpINk=",
+  "Hash": "AunmjNNmkfc/jUzPPaF9RtgZ20RgQ/Y2D2DgO5nxFhk=",
   "Source": "ChatBotCoachWebsite",
   "BasePath": "_content/ChatBotCoachWebsite",
   "Mode": "Default",
@@ -1105,6 +1105,23 @@
       "OriginalItemSpec": "wwwroot\\css\\chat.css"
     },
     {
+      "Identity": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\css\\index.css",
+      "SourceId": "ChatBotCoachWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\",
+      "BasePath": "_content/ChatBotCoachWebsite",
+      "RelativePath": "css/index.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\index.css"
+    },
+    {
       "Identity": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\css\\site.css",
       "SourceId": "ChatBotCoachWebsite",
       "SourceType": "Discovered",
@@ -1205,6 +1222,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\layout.js"
+    },
+    {
+      "Identity": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\js\\particles.js",
+      "SourceId": "ChatBotCoachWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\",
+      "BasePath": "_content/ChatBotCoachWebsite",
+      "RelativePath": "js/particles.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\particles.js"
     },
     {
       "Identity": "C:\\Users\\Michael\\source\\repos\\ChatBotCoachWebsite\\src\\ChatBotCoachWebsite-service\\wwwroot\\js\\site.js",

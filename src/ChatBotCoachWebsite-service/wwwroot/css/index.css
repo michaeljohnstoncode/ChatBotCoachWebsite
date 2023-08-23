@@ -11,6 +11,8 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem;
+    position: relative;
+    
 }
 
 header {
@@ -83,3 +85,18 @@ header {
 #real-examples {
     margin-top: 3rem;
 }
+
+#particles-js {
+    position: fixed; /* This will keep the element fixed at all times */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: -1; /* Ensure it is behind your content */
+}
+
+
+
