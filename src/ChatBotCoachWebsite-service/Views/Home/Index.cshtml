@@ -5,6 +5,40 @@
 
 <!DOCTYPE html>
 <html lang="en">
+    <style>
+    #see-in-action {
+        margin: 20px 0;
+        padding: 20px;
+        background-color: #303030;
+        color: white;
+    }
+
+    .mini-chat {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    #messagesList {
+        max-height: 300px; /* Adjust based on your preference */
+        overflow-y: scroll;
+    }
+
+    .bottom-bar {
+        position: relative;
+        background-color: #212121;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    #sendButton[disabled] {
+        background-color: #aaa; /* Gives a visual indication the button is disabled */
+        cursor: not-allowed;
+    }
+
+    </style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,8 +80,34 @@
                 </button>
             </p>
             <div id="real-examples">
-                <h3>See It In Action</h3>
-                <!-- Add chatbot mockup graphics or interactive demo if possible -->
+
+                <div id="see-in-action">
+                    <h2>See it in Action</h2>
+                    <div class="mini-chat">
+                        <!-- Messages -->
+                        <div id="messagesList">
+                            <li class="user-message">John: Hello ChatBot!</li>
+                            <li class="assistant-message">Assistant: Hi John! How can I assist you today?</li>
+                            <li class="user-message">John: What can you do?</li>
+                            <li class="assistant-message">Assistant: I can answer questions, provide information, and more. How may I serve you today?</li>
+                            <!-- Add more preset messages here -->
+                        </div>
+
+                        <!-- Bottom bar -->
+                        <div id="bottom-bar-demo" class="bottom-bar">
+                            <!-- User Input -->
+                            <div data-user-name="John" id="userInput"></div>
+
+                            <!-- Chat input box -->
+                            <textarea id="messageInput" placeholder="Type a message..." readonly></textarea>
+
+                            <!-- Send button (disabled for the demo) -->
+                            <input type="button" id="sendButton" value="Send" disabled />
+                        </div>
+                    </div>
+                </div>
+
+                </div>
             </div>
         </section>
     </div>
