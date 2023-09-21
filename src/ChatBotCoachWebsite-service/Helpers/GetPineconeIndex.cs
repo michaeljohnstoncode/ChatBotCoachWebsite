@@ -24,7 +24,7 @@ namespace ChatBotCoachWebsite.Helpers
             var pinecone = InitializePineCone();
 
             //index name (only have 1 index for now)
-            var indexName = "indexcoachbot";
+            var indexName = "indexcoachbot1";
 
             //get an index
             var index = await pinecone.GetIndex(indexName);

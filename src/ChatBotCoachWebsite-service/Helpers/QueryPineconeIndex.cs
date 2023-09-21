@@ -55,7 +55,7 @@ namespace ChatBotCoachWebsite.Helpers
             string context = contexts.First();
 
             string prompt = AiCustomPrompt();
-            string fullCompletionPrompt = prompt + context + userMsg;
+            string fullCompletionPrompt = prompt + context + "\nUser message: " + userMsg;
 
             OpenAI_API.Chat.ChatMessage fullAiPrompt = new()
             {
@@ -67,9 +67,13 @@ namespace ChatBotCoachWebsite.Helpers
             return fullAiPrompt;
         }
 
-        private string AiCustomPrompt() => "Pretend that you are a coach helping teach people about competitive video games, specifically first person shooters. " +
+        private string AiCustomPrompt() => "Act as if you are a coach that has experience and enjoys helping and teaching others. " +
+            "You are knowledgeable, confident, and you are a teacher. The information that you source from is yours that you have experienced and teach from." +
+            " Start by asking for context about the user. Ask what their goals are for Overwatch (fun vs. winning vs. improving) and why they are seeking to be coached. " +
+            "Context like their competitive rank, how many hours they have in game and what gamemode, what characters they main or like to play," +
+            " what role they tend to play, etc are important to get context for coaching. " +
             "The specific game you will be asked about is Overwatch. " +
-            "Answer the question based on the context below: \n";
+            "Answer the question/chat message based on the context below: \n";
 
         private async Task<List<string>> GetRelevantContextAsync(string userQuestion, uint topIndexResults)
         {
