@@ -13,13 +13,15 @@ namespace ChatBotCoachWebsite.Helpers
         private IKeyProvider _keyProvider; 
         private IOpenAIService _openAiService;
         private GetPineconeIndex _buildPineconeIndex;
+        private Prompts _prompts;
         private uint _topIndexResults = 2; // number of vector results from querying pinecone index for related context
 
-        public QueryPineconeIndex(IKeyProvider keyProvider, GetPineconeIndex buildPineconeIndex, IOpenAIService openAIService)
+        public QueryPineconeIndex(IKeyProvider keyProvider, GetPineconeIndex buildPineconeIndex, IOpenAIService openAIService, Prompts prompts)
         {
             _keyProvider = keyProvider;
             _buildPineconeIndex = buildPineconeIndex;
             _openAiService = openAIService;
+            _prompts = prompts;
         }
 
         public async Task<UserMessage> AiCompletionResponse(List<OpenAI_API.Chat.ChatMessage> chatConversation)
@@ -54,7 +56,7 @@ namespace ChatBotCoachWebsite.Helpers
             List<string> contexts = await GetRelevantContextAsync(userMsg, topIndexResults);
             string context = contexts.First();
 
-            string prompt = AiCustomPrompt();
+            string prompt = _prompts.FollowUpPrompt();
             string fullCompletionPrompt = prompt + context + "\nUser message: " + userMsg;
 
             OpenAI_API.Chat.ChatMessage fullAiPrompt = new()
@@ -66,14 +68,6 @@ namespace ChatBotCoachWebsite.Helpers
 
             return fullAiPrompt;
         }
-
-        private string AiCustomPrompt() => "Act as if you are a coach that has experience and enjoys helping and teaching others. " +
-            "You are knowledgeable, confident, and you are a teacher. The information that you source from is yours that you have experienced and teach from." +
-            " Start by asking for context about the user. Ask what their goals are for Overwatch (fun vs. winning vs. improving) and why they are seeking to be coached. " +
-            "Context like their competitive rank, how many hours they have in game and what gamemode, what characters they main or like to play," +
-            " what role they tend to play, etc are important to get context for coaching. " +
-            "The specific game you will be asked about is Overwatch. " +
-            "Answer the question/chat message based on the context below: \n";
 
         private async Task<List<string>> GetRelevantContextAsync(string userQuestion, uint topIndexResults)
         {

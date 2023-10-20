@@ -7,7 +7,7 @@
 @{
     ViewData["Title"] = "Chat";
     string isSignedIn = ViewData["IsSignedIn"].ToString();
-    string firstName = ViewData["FirstName"].ToString();
+//    string firstName = ViewData["FirstName"].ToString();
 }
 
 @{
@@ -42,7 +42,7 @@
         @if (isSignedIn == "True")
         {
 
-            <div data-user-name="@firstName" id="userInput"></div>
+           // <div data-user-name="@firstName" id="userInput"></div>
             <!-- Chat input box -->
             <textarea id="messageInput"></textarea>
             

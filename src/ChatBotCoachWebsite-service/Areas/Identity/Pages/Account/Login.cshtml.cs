@@ -122,6 +122,7 @@ namespace ChatBotCoachWebsite.Areas.Identity.Pages.Account
                 if (user == null)
                 {
                     ModelState.AddModelError("", "Invalid login attempt before login");
+                    _logger.LogWarning("Invalid login attempt before login.");
                     return Page();
                 }
 

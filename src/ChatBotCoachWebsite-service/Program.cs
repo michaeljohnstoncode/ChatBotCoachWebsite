@@ -26,6 +26,7 @@ services.AddRazorPages();
 services.AddScoped<User>();
 services.AddScoped<GetPineconeIndex>();
 services.AddScoped<QueryPineconeIndex>();
+services.AddScoped<Prompts>();
 services.AddScoped<IKeyProvider, TextFileKeyProvider>();
 services.AddScoped<IOpenAIService, OpenAIService>();
 services.AddScoped<IAiChatService, AiChatService>();

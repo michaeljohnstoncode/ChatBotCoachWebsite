@@ -11,9 +11,11 @@ namespace ChatBotCoachWebsite.Helpers
     public class SummarizeMessageService : ISummarizeChatService
     {
         private IOpenAIService _openAiService;
-        public SummarizeMessageService(IOpenAIService openAIService)
+        private Prompts _prompts;
+        public SummarizeMessageService(IOpenAIService openAIService, Prompts prompts)
         {
             _openAiService = openAIService;
+            _prompts = prompts;
         }
 
         public async Task<UserMessage> SummarizeMessage(UserMessage msg)
@@ -22,7 +24,7 @@ namespace ChatBotCoachWebsite.Helpers
             var openAi = _openAiService.GetOpenAI();
 
             //create message with prompt
-            string promptedMsg = SummaryPrompt() + msg.Message;
+            string promptedMsg = _prompts.SummaryPrompt() + msg.Message;
 
             //format promptedMsg to be inputted to openai chat completion
             OpenAI_API.Chat.ChatMessage promptedChatMsg = new()
@@ -43,7 +45,5 @@ namespace ChatBotCoachWebsite.Helpers
             };
             return msgSummary;
         }
-
-        private string SummaryPrompt() => "Summarize the following text into one key point. Try to keep it condense and avoid getting into the details:\n";
     }
 }
